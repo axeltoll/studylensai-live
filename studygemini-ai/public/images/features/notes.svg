@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="noteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="pencilGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background Circle with Pulse Animation -->
+  <circle cx="80" cy="80" r="70" fill="#F5F3FF">
+    <animate attributeName="r" values="70;72;70" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Main Notebook -->
+  <g>
+    <rect x="45" y="40" width="70" height="90" rx="3" fill="white" stroke="#E5E7EB" stroke-width="1">
+      <!-- Page turn animation -->
+      <animate attributeName="x" values="45;47;45" dur="5s" begin="2s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Page curl effect - animates in and out -->
+    <path d="M115,40 Q105,50 115,60" fill="none" stroke="#E5E7EB" stroke-width="1" opacity="0">
+      <animate attributeName="opacity" values="0;0.5;0" dur="5s" begin="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Spiral Binding -->
+  <line x1="55" y1="40" x2="55" y2="130" stroke="#E5E7EB" stroke-width="2" />
+  <line x1="45" y1="45" x2="53" y2="45" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="52" x2="53" y2="52" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="59" x2="53" y2="59" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="66" x2="53" y2="66" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="73" x2="53" y2="73" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="80" x2="53" y2="80" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="87" x2="53" y2="87" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="94" x2="53" y2="94" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="101" x2="53" y2="101" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="108" x2="53" y2="108" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="115" x2="53" y2="115" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="45" y1="122" x2="53" y2="122" stroke="#E5E7EB" stroke-width="1" />
+  
+  <!-- Notebook Lines -->
+  <line x1="60" y1="55" x2="110" y2="55" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="60" y1="65" x2="110" y2="65" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="60" y1="75" x2="110" y2="75" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="60" y1="85" x2="110" y2="85" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="60" y1="95" x2="110" y2="95" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="60" y1="105" x2="110" y2="105" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="60" y1="115" x2="110" y2="115" stroke="#E5E7EB" stroke-width="1" />
+  
+  <!-- Note Content (Text) -->
+  <text x="63" y="52" font-family="Arial, sans-serif" font-size="5" fill="#6B7280">Study Notes:</text>
+  
+  <!-- Animated writing lines -->
+  <line x1="60" y1="62" x2="60" y2="62" stroke="#8B5CF6" stroke-width="1">
+    <animate attributeName="x2" values="60;90" dur="2s" begin="0.5s" fill="freeze" />
+  </line>
+  
+  <line x1="60" y1="72" x2="60" y2="72" stroke="#8B5CF6" stroke-width="1">
+    <animate attributeName="x2" values="60;100" dur="2.5s" begin="2.5s" fill="freeze" />
+  </line>
+  
+  <line x1="60" y1="82" x2="60" y2="82" stroke="#8B5CF6" stroke-width="1">
+    <animate attributeName="x2" values="60;85" dur="1.5s" begin="5s" fill="freeze" />
+  </line>
+  
+  <!-- Pencil with movement animation -->
+  <g>
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      from="80,90" 
+      to="95,105" 
+      dur="3s" 
+      begin="0.2s"
+      repeatCount="indefinite" 
+      additive="sum"
+    />
+    <g transform="translate(90, 100) rotate(-45)">
+      <rect x="0" y="0" width="40" height="8" rx="1" fill="url(#pencilGradient)" />
+      <polygon points="0,0 0,8 -10,4" fill="#F59E0B" />
+      <rect x="30" y="0" width="10" height="8" fill="#FBBF24" />
+      <line x1="30" y1="0" x2="30" y2="8" stroke="#F59E0B" stroke-width="1" />
+    </g>
+  </g>
+  
+  <!-- Highlighter Mark with fade-in animation -->
+  <rect x="60" y="79" width="25" height="6" rx="2" fill="#F0ABFC" opacity="0">
+    <animate attributeName="opacity" values="0;0.4" dur="1s" begin="5.5s" fill="freeze" />
+  </rect>
+  
+  <!-- Study Badge with pulsing effect -->
+  <circle cx="45" cy="40" r="15" fill="url(#noteGradient)" filter="url(#glow)">
+    <animate attributeName="r" values="15;16;15" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="45" y="43" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="white">NOTES</text>
+  
+  <!-- Animation: Writing effect for the last line -->
+  <line x1="60" y1="92" x2="60" y2="92" stroke="#8B5CF6" stroke-width="1">
+    <animate attributeName="x2" values="60;100;60" dur="6s" repeatCount="indefinite" />
+  </line>
+</svg> 

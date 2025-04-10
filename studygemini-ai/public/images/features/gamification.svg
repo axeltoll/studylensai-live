@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="gamificationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6" />
+      <stop offset="100%" stop-color="#DB2777" />
+    </linearGradient>
+    <linearGradient id="badgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBCFE8" />
+      <stop offset="100%" stop-color="#F9A8D4" />
+    </linearGradient>
+    <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#FDF2F8" />
+  
+  <!-- Game Board Base -->
+  <rect x="45" y="45" width="70" height="70" rx="4" ry="4" fill="white" stroke="#F9A8D4" stroke-width="2" />
+  
+  <!-- Game Board Grid -->
+  <line x1="45" y1="62" x2="115" y2="62" stroke="#FBCFE8" stroke-width="1" />
+  <line x1="45" y1="79" x2="115" y2="79" stroke="#FBCFE8" stroke-width="1" />
+  <line x1="45" y1="96" x2="115" y2="96" stroke="#FBCFE8" stroke-width="1" />
+  
+  <line x1="62" y1="45" x2="62" y2="115" stroke="#FBCFE8" stroke-width="1" />
+  <line x1="79" y1="45" x2="79" y2="115" stroke="#FBCFE8" stroke-width="1" />
+  <line x1="96" y1="45" x2="96" y2="115" stroke="#FBCFE8" stroke-width="1" />
+  
+  <!-- Game Elements -->
+  <!-- Level Badge -->
+  <circle cx="30" cy="45" r="15" fill="url(#gamificationGradient)" />
+  <text x="30" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">LVL 5</text>
+  
+  <!-- Star Achievements -->
+  <path d="M130,60 L134,72 L147,72 L137,80 L140,93 L130,85 L120,93 L123,80 L113,72 L126,72 Z" fill="url(#starGradient)" stroke="#F59E0B" stroke-width="1" />
+  <path d="M130,100 L134,112 L147,112 L137,120 L140,133 L130,125 L120,133 L123,120 L113,112 L126,112 Z" fill="white" stroke="#F59E0B" stroke-width="1" stroke-dasharray="2,1" />
+  
+  <!-- Progress Bar -->
+  <rect x="30" y="130" width="100" height="10" rx="5" ry="5" fill="#FBCFE8" />
+  <rect x="30" y="130" width="60" height="10" rx="5" ry="5" fill="url(#gamificationGradient)" />
+  
+  <!-- Game Tokens -->
+  <circle cx="53.5" cy="53.5" r="7" fill="url(#badgeGradient)" stroke="#F472B6" stroke-width="1.5" />
+  <text x="53.5" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#DB2777">X</text>
+  
+  <circle cx="53.5" cy="87.5" r="7" fill="url(#badgeGradient)" stroke="#F472B6" stroke-width="1.5" />
+  <text x="53.5" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#DB2777">O</text>
+  
+  <circle cx="87.5" cy="53.5" r="7" fill="url(#badgeGradient)" stroke="#F472B6" stroke-width="1.5" />
+  <text x="87.5" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#DB2777">O</text>
+  
+  <circle cx="87.5" cy="87.5" r="7" fill="url(#badgeGradient)" stroke="#F472B6" stroke-width="1.5" />
+  <text x="87.5" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#DB2777">X</text>
+  
+  <circle cx="53.5" cy="105.5" r="7" fill="url(#badgeGradient)" stroke="#F472B6" stroke-width="1.5" />
+  <text x="53.5" y="109" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#DB2777">X</text>
+  
+  <circle cx="105.5" cy="70.5" r="7" fill="url(#badgeGradient)" stroke="#F472B6" stroke-width="1.5" />
+  <text x="105.5" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#DB2777">O</text>
+  
+  <!-- Trophy Icon -->
+  <path d="M80,25 L90,25 L90,35 L88,38 C91,40 93,43 93,47 C93,50 92,53 90,55 L85,55 C88,53 90,50 90,47 C90,44 88,41 85,40 L83,40 L83,51 L80,51 L77,51 L77,40 L75,40 C72,41 70,44 70,47 C70,50 72,53 75,55 L70,55 C68,53 67,50 67,47 C67,43 69,40 72,38 L70,35 L70,25 L80,25 Z" fill="url(#starGradient)" stroke="#F59E0B" stroke-width="1" />
+  <rect x="75" y="51" width="10" height="3" fill="url(#starGradient)" stroke="#F59E0B" stroke-width="1" />
+  <rect x="77" y="54" width="6" height="4" fill="url(#starGradient)" stroke="#F59E0B" stroke-width="1" />
+  
+  <!-- Pulse Animation on XP -->
+  <text x="80" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#DB2777">60/100 XP</text>
+  <circle cx="120" cy="135" r="0" fill="#DB2777" opacity="0.3">
+    <animate
+      attributeName="r"
+      values="0;10;0"
+      dur="2s"
+      repeatCount="indefinite" />
+    <animate
+      attributeName="opacity"
+      values="0.3;0;0.3"
+      dur="2s"
+      repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Moving Game Piece -->
+  <circle cx="70.5" cy="70.5" r="7" fill="#F472B6">
+    <animate
+      attributeName="cx"
+      values="70.5;87.5;87.5;105.5;105.5;105.5;87.5;70.5"
+      dur="6s"
+      repeatCount="indefinite" />
+    <animate
+      attributeName="cy"
+      values="70.5;70.5;87.5;87.5;105.5;105.5;105.5;87.5"
+      dur="6s"
+      repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Gamification Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#gamificationGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">GAME</text>
+</svg> 

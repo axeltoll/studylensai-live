@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="proGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#4F46E5" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#EEF2FF" />
+  
+  <!-- Rocket Body -->
+  <path d="M80 40c-20 0-30 15-30 40s10 40 30 40 30-15 30-40-10-40-30-40z" fill="white" stroke="#3B82F6" stroke-width="2" />
+  
+  <!-- Rocket Top -->
+  <path d="M80 40v-10c0-5 10-5 10 0v5c0 5-10 5-10 5z" fill="#3B82F6" />
+  
+  <!-- Rocket Bottom -->
+  <path d="M70 110c0 0 5 10 10 10s10-10 10-10" fill="none" stroke="#3B82F6" stroke-width="2" />
+  
+  <!-- Rocket Window -->
+  <circle cx="80" cy="70" r="10" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2" />
+  
+  <!-- Rocket Flames -->
+  <path d="M75 120c0 0-5 15-5 20m10-20c0 0 0 15 0 20m10-20c0 0 5 15 5 20" stroke="#F97316" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Pro Badge -->
+  <circle cx="120" cy="50" r="20" fill="url(#proGradient)" />
+  <text x="120" y="55" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">PRO</text>
+</svg> 

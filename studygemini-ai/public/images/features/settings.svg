@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="settingsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6B7280" />
+      <stop offset="100%" stop-color="#4B5563" />
+    </linearGradient>
+    <linearGradient id="toggleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#F3F4F6" />
+  
+  <!-- Main Settings Gear -->
+  <g transform="translate(80, 80)">
+    <circle cx="0" cy="0" r="35" fill="white" stroke="#D1D5DB" stroke-width="2" />
+    
+    <!-- Gear Teeth -->
+    <g>
+      <rect x="-4" y="-45" width="8" height="10" rx="2" fill="#9CA3AF" />
+      <rect x="-4" y="35" width="8" height="10" rx="2" fill="#9CA3AF" />
+      <rect x="35" y="-4" width="10" height="8" rx="2" fill="#9CA3AF" />
+      <rect x="-45" y="-4" width="10" height="8" rx="2" fill="#9CA3AF" />
+      
+      <rect x="22" y="-40" width="8" height="10" rx="2" transform="rotate(45)" fill="#9CA3AF" />
+      <rect x="22" y="30" width="8" height="10" rx="2" transform="rotate(45)" fill="#9CA3AF" />
+      <rect x="-40" y="22" width="10" height="8" rx="2" transform="rotate(45)" fill="#9CA3AF" />
+      <rect x="30" y="22" width="10" height="8" rx="2" transform="rotate(45)" fill="#9CA3AF" />
+      
+      <rect x="22" y="-40" width="8" height="10" rx="2" transform="rotate(-45)" fill="#9CA3AF" />
+      <rect x="22" y="30" width="8" height="10" rx="2" transform="rotate(-45)" fill="#9CA3AF" />
+      <rect x="-40" y="22" width="10" height="8" rx="2" transform="rotate(-45)" fill="#9CA3AF" />
+      <rect x="30" y="22" width="10" height="8" rx="2" transform="rotate(-45)" fill="#9CA3AF" />
+      
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0"
+        to="360"
+        dur="20s"
+        repeatCount="indefinite" />
+    </g>
+    
+    <!-- Inner Gear -->
+    <circle cx="0" cy="0" r="18" fill="#E5E7EB" />
+    <circle cx="0" cy="0" r="8" fill="#9CA3AF" />
+  </g>
+  
+  <!-- Settings Menu Items -->
+  <rect x="40" y="25" width="80" height="15" rx="3" fill="white" stroke="#D1D5DB" stroke-width="1" />
+  <text x="50" y="35" font-family="Arial, sans-serif" font-size="8" fill="#4B5563">Dark Mode</text>
+  <rect x="100" y="27.5" width="15" height="8" rx="4" fill="#E5E7EB" />
+  <circle cx="105" cy="31.5" r="3" fill="#9CA3AF" />
+  
+  <rect x="40" y="45" width="80" height="15" rx="3" fill="white" stroke="#D1D5DB" stroke-width="1" />
+  <text x="50" y="55" font-family="Arial, sans-serif" font-size="8" fill="#4B5563">Notifications</text>
+  <rect x="100" y="47.5" width="15" height="8" rx="4" fill="url(#toggleGradient)" />
+  <circle cx="110" cy="51.5" r="3" fill="white" />
+  
+  <rect x="40" y="125" width="80" height="15" rx="3" fill="white" stroke="#D1D5DB" stroke-width="1" />
+  <text x="50" y="135" font-family="Arial, sans-serif" font-size="8" fill="#4B5563">Study Reminders</text>
+  <rect x="100" y="127.5" width="15" height="8" rx="4" fill="url(#toggleGradient)" />
+  <circle cx="110" cy="131.5" r="3" fill="white" />
+  
+  <!-- Sliders -->
+  <rect x="40" y="145" width="80" height="5" rx="2.5" fill="#E5E7EB" />
+  <circle cx="80" cy="147.5" r="5" fill="#6B7280" />
+  <text x="50" y="157" font-family="Arial, sans-serif" font-size="6" fill="#6B7280">Font Size</text>
+  
+  <!-- Smaller Settings Icons -->
+  <circle cx="30" cy="50" r="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1" />
+  <text x="30" y="53" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#6B7280">⚙</text>
+  
+  <circle cx="130" cy="110" r="8" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1" />
+  <text x="130" y="113" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#6B7280">⚙</text>
+  
+  <!-- Settings Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#settingsGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" font-weight="bold" fill="white">SETTINGS</text>
+</svg> 

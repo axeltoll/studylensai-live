@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="studyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DBEAFE" />
+      <stop offset="100%" stop-color="#93C5FD" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#EFF6FF" />
+  
+  <!-- Open Book -->
+  <path d="M45,55 C45,50 50,45 60,45 L80,45 L80,120 L60,120 C50,120 45,115 45,110 Z" fill="white" stroke="#BFDBFE" stroke-width="1.5" />
+  <path d="M115,55 C115,50 110,45 100,45 L80,45 L80,120 L100,120 C110,120 115,115 115,110 Z" fill="white" stroke="#BFDBFE" stroke-width="1.5" />
+  
+  <!-- Book Spine -->
+  <line x1="80" y1="45" x2="80" y2="120" stroke="#BFDBFE" stroke-width="2" />
+  
+  <!-- Book Pages Lines Left -->
+  <line x1="55" y1="60" x2="75" y2="60" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="55" y1="70" x2="75" y2="70" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="55" y1="80" x2="75" y2="80" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="55" y1="90" x2="75" y2="90" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="55" y1="100" x2="75" y2="100" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="55" y1="110" x2="75" y2="110" stroke="#E5E7EB" stroke-width="1" />
+  
+  <!-- Book Pages Lines Right -->
+  <line x1="85" y1="60" x2="105" y2="60" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="85" y1="70" x2="105" y2="70" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="85" y1="80" x2="105" y2="80" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="85" y1="90" x2="105" y2="90" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="85" y1="100" x2="105" y2="100" stroke="#E5E7EB" stroke-width="1" />
+  <line x1="85" y1="110" x2="105" y2="110" stroke="#E5E7EB" stroke-width="1" />
+  
+  <!-- AI Brain/Lightbulb -->
+  <circle cx="80" cy="80" r="20" fill="url(#studyGradient)" />
+  
+  <!-- Brain Circuit Lines -->
+  <path d="M72,75 C70,77 70,80 72,82 C74,84 78,84 80,82 C82,80 82,77 80,75 C78,73 74,73 72,75" fill="none" stroke="white" stroke-width="1.5" />
+  <path d="M80,75 C82,77 82,80 80,82 C78,84 74,84 72,82 C70,80 70,77 72,75 C74,73 78,73 80,75" fill="none" stroke="white" stroke-width="1.5" />
+  <line x1="80" y1="68" x2="80" y2="73" stroke="white" stroke-width="1.5" />
+  <line x1="80" y1="87" x2="80" y2="92" stroke="white" stroke-width="1.5" />
+  <line x1="73" y1="71" x2="68" y2="66" stroke="white" stroke-width="1.5" />
+  <line x1="87" y1="71" x2="92" y2="66" stroke="white" stroke-width="1.5" />
+  <line x1="87" y1="89" x2="92" y2="94" stroke="white" stroke-width="1.5" />
+  <line x1="73" y1="89" x2="68" y2="94" stroke="white" stroke-width="1.5" />
+  
+  <!-- Learning Rays Animation -->
+  <g>
+    <line x1="50" y1="80" x2="60" y2="80" stroke="#3B82F6" stroke-width="1" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="100" y1="80" x2="110" y2="80" stroke="#3B82F6" stroke-width="1" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="80" y1="50" x2="80" y2="60" stroke="#3B82F6" stroke-width="1" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="80" y1="100" x2="80" y2="110" stroke="#3B82F6" stroke-width="1" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0;0.7" dur="2s" repeatCount="indefinite" />
+    </line>
+  </g>
+  
+  <!-- Badge -->
+  <circle cx="35" cy="35" r="15" fill="url(#studyGradient)" />
+  <text x="35" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">STUDY</text>
+</svg> 

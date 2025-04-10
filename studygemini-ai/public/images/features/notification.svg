@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="notificationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#BE185D" />
+    </linearGradient>
+    <linearGradient id="bellGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9A8D4" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <linearGradient id="alertGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBCFE8" />
+      <stop offset="100%" stop-color="#F9A8D4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#FDF2F8" />
+  
+  <!-- Main Notification Bell -->
+  <path d="M80,45 Q95,45 100,60 Q105,75 105,95 L108,100 L52,100 L55,95 Q55,75 60,60 Q65,45 80,45" 
+        fill="url(#bellGradient)" />
+  
+  <!-- Bell Base -->
+  <path d="M70,100 C70,110 90,110 90,100" stroke="#BE185D" stroke-width="2" fill="none" />
+  
+  <!-- Bell Clapper -->
+  <circle cx="80" cy="85" r="3" fill="#BE185D" />
+  
+  <!-- Notification Badge -->
+  <circle cx="103" cy="57" r="10" fill="url(#notificationGradient)" />
+  <text x="103" y="61" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">3</text>
+  
+  <!-- Notification Popup 1 -->
+  <rect x="40" y="120" width="80" height="17" rx="5" ry="5" fill="white" stroke="#F9A8D4" stroke-width="1.5" />
+  <circle cx="50" cy="128.5" r="5" fill="url(#notificationGradient)" />
+  <line x1="60" y1="124" x2="100" y2="124" stroke="#FBCFE8" stroke-width="2" />
+  <line x1="60" y1="128.5" x2="90" y2="128.5" stroke="#FBCFE8" stroke-width="2" />
+  <line x1="60" y1="133" x2="95" y2="133" stroke="#FBCFE8" stroke-width="2" />
+  
+  <!-- Notification Popup 2 - Smaller and Behind -->
+  <rect x="50" y="105" width="70" height="15" rx="5" ry="5" fill="white" stroke="#F9A8D4" stroke-width="1.5" opacity="0.8" />
+  <circle cx="59" cy="112.5" r="4" fill="url(#notificationGradient)" opacity="0.8" />
+  <line x1="68" y1="109" x2="105" y2="109" stroke="#FBCFE8" stroke-width="1.5" opacity="0.8" />
+  <line x1="68" y1="112.5" x2="95" y2="112.5" stroke="#FBCFE8" stroke-width="1.5" opacity="0.8" />
+  <line x1="68" y1="116" x2="100" y2="116" stroke="#FBCFE8" stroke-width="1.5" opacity="0.8" />
+  
+  <!-- Bell Ring Animation -->
+  <path d="M68,55 Q55,65 60,75" stroke="#FBCFE8" stroke-width="1.5" fill="none" stroke-dasharray="5,3">
+    <animate attributeName="d" 
+             values="M68,55 Q55,65 60,75;M65,53 Q50,65 57,75;M68,55 Q55,65 60,75" 
+             dur="1s" 
+             repeatCount="indefinite" />
+  </path>
+  
+  <path d="M92,55 Q105,65 100,75" stroke="#FBCFE8" stroke-width="1.5" fill="none" stroke-dasharray="5,3">
+    <animate attributeName="d" 
+             values="M92,55 Q105,65 100,75;M95,53 Q110,65 103,75;M92,55 Q105,65 100,75" 
+             dur="1s" 
+             repeatCount="indefinite" />
+  </path>
+  
+  <!-- Alert Animation -->
+  <circle cx="80" cy="30" r="0" fill="#EC4899" opacity="0.7">
+    <animate attributeName="r" 
+             values="0;15;0" 
+             dur="2s" 
+             repeatCount="indefinite" />
+    <animate attributeName="opacity" 
+             values="0.7;0;0.7" 
+             dur="2s" 
+             repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Notification Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#notificationGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">NOTIF</text>
+</svg> 

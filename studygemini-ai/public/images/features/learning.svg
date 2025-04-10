@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="learningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#6D28D9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#F5F3FF" />
+  
+  <!-- Book Outline -->
+  <rect x="50" y="50" width="60" height="70" rx="3" ry="3" fill="white" stroke="#8B5CF6" stroke-width="2" />
+  
+  <!-- Book Pages -->
+  <path d="M55,55 L105,55" stroke="#A78BFA" stroke-width="1" />
+  <path d="M55,60 L105,60" stroke="#A78BFA" stroke-width="1" />
+  <path d="M55,65 L105,65" stroke="#A78BFA" stroke-width="1" />
+  <path d="M55,70 L105,70" stroke="#A78BFA" stroke-width="1" />
+  <path d="M55,75 L85,75" stroke="#A78BFA" stroke-width="1" />
+  
+  <!-- Book Spine -->
+  <rect x="48" y="50" width="4" height="70" rx="1" ry="1" fill="url(#learningGradient)" />
+  
+  <!-- Pencil -->
+  <line x1="60" y1="90" x2="95" y2="90" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" />
+  <polygon points="95,88 95,92 102,90" fill="#8B5CF6" />
+  <rect x="60" y="88" width="5" height="4" fill="#A78BFA" />
+  
+  <!-- Light Bulb -->
+  <circle cx="110" cy="70" r="12" fill="white" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M110,63 L110,68" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M110,78 L110,83" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M103,70 L98,70" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M117,70 L122,70" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M105,65 L101,61" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M115,65 L119,61" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M105,75 L101,79" stroke="#8B5CF6" stroke-width="2" />
+  <path d="M115,75 L119,79" stroke="#8B5CF6" stroke-width="2" />
+  
+  <!-- Learning Badge -->
+  <circle cx="115" cy="45" r="15" fill="url(#learningGradient)" />
+  <text x="115" y="49" font-family="Arial, sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="white">LEARN</text>
+</svg> 

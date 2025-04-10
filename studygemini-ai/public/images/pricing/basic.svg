@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="basicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#F3F4F6" />
+  
+  <!-- Document Icon -->
+  <rect x="50" y="40" width="60" height="80" rx="4" fill="white" stroke="#6366F1" stroke-width="2" />
+  
+  <!-- Document Lines -->
+  <line x1="60" y1="60" x2="100" y2="60" stroke="#6366F1" stroke-width="2" stroke-linecap="round" />
+  <line x1="60" y1="75" x2="100" y2="75" stroke="#6366F1" stroke-width="2" stroke-linecap="round" />
+  <line x1="60" y1="90" x2="90" y2="90" stroke="#6366F1" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Star Badge -->
+  <circle cx="110" cy="50" r="20" fill="url(#basicGradient)" />
+  <path d="M110 38l2.9 8.8h9.2l-7.4 5.4 2.8 8.8-7.5-5.4-7.5 5.4 2.8-8.8-7.4-5.4h9.2z" fill="white" />
+</svg> 

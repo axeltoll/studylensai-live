@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#F5F3FF" />
+  
+  <!-- AI Brain with Animation -->
+  <g transform="translate(80, 60)">
+    <ellipse cx="0" cy="0" rx="25" ry="22" fill="white" stroke="url(#purpleGradient)" stroke-width="2" />
+    
+    <!-- Brain Circuits -->
+    <path d="M-15,-10 C-10,-15 -5,-10 0,-15 C5,-10 10,-15 15,-10" stroke="url(#purpleGradient)" stroke-width="1.5" fill="none" />
+    <path d="M-15,0 C-10,-5 -5,0 0,-5 C5,0 10,-5 15,0" stroke="url(#purpleGradient)" stroke-width="1.5" fill="none" />
+    <path d="M-15,10 C-10,5 -5,10 0,5 C5,10 10,5 15,10" stroke="url(#purpleGradient)" stroke-width="1.5" fill="none" />
+    
+    <!-- Pulsing Effect -->
+    <ellipse cx="0" cy="0" rx="25" ry="22" fill="none" stroke="url(#purpleGradient)" stroke-width="2">
+      <animate attributeName="rx" values="25;27;25" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="ry" values="22;24;22" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
+    </ellipse>
+  </g>
+  
+  <!-- Globe with Connections -->
+  <circle cx="80" cy="105" r="20" fill="white" stroke="#94A3B8" stroke-width="1" filter="url(#glow)" />
+  
+  <!-- Meridians -->
+  <ellipse cx="80" cy="105" rx="20" ry="10" fill="none" stroke="#94A3B8" stroke-width="0.5" />
+  <ellipse cx="80" cy="105" rx="15" ry="7.5" fill="none" stroke="#94A3B8" stroke-width="0.5" />
+  <ellipse cx="80" cy="105" rx="10" ry="5" fill="none" stroke="#94A3B8" stroke-width="0.5" />
+  
+  <!-- Parallels -->
+  <ellipse cx="80" cy="95" rx="20" ry="7" fill="none" stroke="#94A3B8" stroke-width="0.5" />
+  <ellipse cx="80" cy="115" rx="20" ry="7" fill="none" stroke="#94A3B8" stroke-width="0.5" />
+  
+  <!-- Connection Lines with Animation -->
+  <g>
+    <!-- Books/Resources -->
+    <rect x="30" y="40" width="15" height="20" rx="2" fill="#E0E7FF" stroke="#818CF8" stroke-width="1" />
+    <rect x="33" y="45" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="33" y="50" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="33" y="55" width="9" height="2" rx="1" fill="#818CF8" />
+    
+    <path d="M45,50 L55,60" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="3">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Research Papers -->
+    <rect x="25" y="100" width="15" height="20" rx="2" fill="#E0E7FF" stroke="#818CF8" stroke-width="1" />
+    <rect x="28" y="105" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="28" y="110" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="28" y="115" width="9" height="2" rx="1" fill="#818CF8" />
+    
+    <path d="M40,105 L60,105" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="3">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Academic Sources -->
+    <rect x="120" y="40" width="15" height="20" rx="2" fill="#E0E7FF" stroke="#818CF8" stroke-width="1" />
+    <rect x="123" y="45" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="123" y="50" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="123" y="55" width="9" height="2" rx="1" fill="#818CF8" />
+    
+    <path d="M120,50 L105,60" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="3">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Trusted Sources -->
+    <rect x="120" y="100" width="15" height="20" rx="2" fill="#E0E7FF" stroke="#818CF8" stroke-width="1" />
+    <rect x="123" y="105" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="123" y="110" width="9" height="2" rx="1" fill="#818CF8" />
+    <rect x="123" y="115" width="9" height="2" rx="1" fill="#818CF8" />
+    
+    <path d="M120,105 L100,105" stroke="#A855F7" stroke-width="1.5" stroke-dasharray="3">
+      <animate attributeName="stroke-dashoffset" values="0;12" dur="2s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Data Dots Animation -->
+    <circle cx="50" cy="55" r="1.5" fill="url(#purpleGradient)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="65" cy="65" r="1.5" fill="url(#purpleGradient)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="45" cy="105" r="1.5" fill="url(#purpleGradient)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="115" cy="105" r="1.5" fill="url(#purpleGradient)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="110" cy="55" r="1.5" fill="url(#purpleGradient)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="95" cy="65" r="1.5" fill="url(#purpleGradient)">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" begin="2.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg> 

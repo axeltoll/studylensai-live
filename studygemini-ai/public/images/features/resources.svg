@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="resourceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333EA" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+    <linearGradient id="timeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="sandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background Circle with subtle pulse -->
+  <circle cx="80" cy="80" r="70" fill="#FAF5FF">
+    <animate attributeName="r" values="70;72;70" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Activity Timeline Panel -->
+  <rect x="40" y="60" width="80" height="70" rx="4" fill="white" stroke="#E9D5FF" stroke-width="1" />
+  
+  <!-- Timeline Dots and Lines -->
+  <line x1="55" y1="70" x2="55" y2="120" stroke="#F3E8FF" stroke-width="2" stroke-dasharray="2,2" />
+  
+  <!-- Timeline Items with Staggered Animation -->
+  <!-- Item 1 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="0.5s" fill="freeze" />
+    <circle cx="55" cy="80" r="4" fill="url(#resourceGradient)" />
+    <rect x="65" y="75" width="45" height="10" rx="2" fill="#F3E8FF" />
+    <rect x="65" y="75" width="25" height="10" rx="2" fill="#E9D5FF" />
+  </g>
+  
+  <!-- Item 2 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze" />
+    <circle cx="55" cy="95" r="4" fill="url(#timeGradient)" />
+    <rect x="65" y="90" width="40" height="10" rx="2" fill="#FEF3C7" />
+    <rect x="65" y="90" width="30" height="10" rx="2" fill="#FDE68A" />
+  </g>
+  
+  <!-- Item 3 -->
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.5s" fill="freeze" />
+    <circle cx="55" cy="110" r="4" fill="url(#resourceGradient)" />
+    <rect x="65" y="105" width="50" height="10" rx="2" fill="#F3E8FF" />
+    <rect x="65" y="105" width="15" height="10" rx="2" fill="#E9D5FF" />
+  </g>
+  
+  <!-- Hourglass Icon -->
+  <g transform="translate(130, 40)">
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="130,40; 130,37; 130,40" 
+      dur="2s" 
+      repeatCount="indefinite" 
+    />
+    <!-- Hourglass Outer Frame -->
+    <path d="M-20,0 L0,-15 L20,0 L20,5 L0,20 L-20,5 Z" fill="none" stroke="url(#timeGradient)" stroke-width="2" />
+    
+    <!-- Sand Top - Decreasing -->
+    <path d="M-15,2 L0,-10 L15,2 L15,4 L0,15 L-15,4 Z" fill="url(#sandGradient)">
+      <animate attributeName="d" 
+        values="M-15,2 L0,-10 L15,2 L15,4 L0,15 L-15,4 Z; 
+                M-15,2 L0,-10 L15,2 L15,4 L0,4 L-15,4 Z"
+        dur="3s" 
+        repeatCount="indefinite" />
+    </path>
+    
+    <!-- Sand Bottom - Increasing -->
+    <path d="M-15,4 L0,4 L15,4 L15,5 L0,20 L-15,5 Z" fill="url(#sandGradient)" opacity="0.3">
+      <animate attributeName="d" 
+        values="M-15,4 L0,4 L15,4 L15,5 L0,20 L-15,5 Z;
+                M-15,4 L0,15 L15,4 L15,5 L0,20 L-15,5 Z"
+        dur="3s" 
+        repeatCount="indefinite" />
+      <animate attributeName="opacity" 
+        values="0.3;0.9"
+        dur="3s" 
+        repeatCount="indefinite" />
+    </path>
+    
+    <!-- Middle Sand Line -->
+    <line x1="-15" y1="4" x2="15" y2="4" stroke="#F59E0B" stroke-width="0.5" />
+  </g>
+  
+  <!-- Resources Icons (Floating) -->
+  <!-- Document -->
+  <g transform="translate(35, 40)">
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="35,40; 35,38; 35,40" 
+      dur="3s" 
+      begin="0.2s"
+      repeatCount="indefinite" 
+    />
+    <rect x="-8" y="-10" width="16" height="20" rx="2" fill="white" stroke="#C084FC" stroke-width="1" />
+    <line x1="-4" y1="-5" x2="4" y2="-5" stroke="#C084FC" stroke-width="1" />
+    <line x1="-4" y1="0" x2="4" y2="0" stroke="#C084FC" stroke-width="1" />
+    <line x1="-4" y1="5" x2="2" y2="5" stroke="#C084FC" stroke-width="1" />
+  </g>
+  
+  <!-- Chat -->
+  <g transform="translate(115, 105)">
+    <animateTransform 
+      attributeName="transform" 
+      type="translate" 
+      values="115,105; 115,102; 115,105" 
+      dur="2.5s" 
+      begin="0.7s"
+      repeatCount="indefinite" 
+    />
+    <path d="M-10,-10 L10,-10 L10,5 L5,5 L0,10 L0,5 L-10,5 Z" fill="white" stroke="#C084FC" stroke-width="1" />
+    <circle cx="-5" cy="-2.5" r="1.5" fill="#C084FC" />
+    <circle cx="0" cy="-2.5" r="1.5" fill="#C084FC" />
+    <circle cx="5" cy="-2.5" r="1.5" fill="#C084FC" />
+  </g>
+  
+  <!-- Badge -->
+  <circle cx="40" cy="40" r="15" fill="url(#resourceGradient)" filter="url(#glow)">
+    <animate attributeName="r" values="15;16;15" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <text x="40" y="43" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="6" fill="white">ACTIVITY</text>
+  
+  <!-- Chart Animation in the Background -->
+  <g transform="translate(100, 130)" opacity="0.5">
+    <!-- Bar Chart -->
+    <rect x="-20" y="-5" width="5" height="0" fill="#C084FC">
+      <animate attributeName="height" values="0;10;15;10" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="y" values="-5;-15;-20;-15" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <rect x="-12" y="-5" width="5" height="0" fill="#C084FC">
+      <animate attributeName="height" values="0;15;8;15" dur="4s" begin="0.5s" repeatCount="indefinite" />
+      <animate attributeName="y" values="-5;-20;-13;-20" dur="4s" begin="0.5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="-4" y="-5" width="5" height="0" fill="#C084FC">
+      <animate attributeName="height" values="0;8;20;8" dur="4s" begin="1s" repeatCount="indefinite" />
+      <animate attributeName="y" values="-5;-13;-25;-13" dur="4s" begin="1s" repeatCount="indefinite" />
+    </rect>
+    <rect x="4" y="-5" width="5" height="0" fill="#C084FC">
+      <animate attributeName="height" values="0;12;5;12" dur="4s" begin="1.5s" repeatCount="indefinite" />
+      <animate attributeName="y" values="-5;-17;-10;-17" dur="4s" begin="1.5s" repeatCount="indefinite" />
+    </rect>
+    <rect x="12" y="-5" width="5" height="0" fill="#C084FC">
+      <animate attributeName="height" values="0;18;12;18" dur="4s" begin="2s" repeatCount="indefinite" />
+      <animate attributeName="y" values="-5;-23;-17;-23" dur="4s" begin="2s" repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg> 
