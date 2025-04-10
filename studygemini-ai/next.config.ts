@@ -6,6 +6,13 @@ const nextConfig: NextConfig = {
     domains: ['storage.googleapis.com', 'lh3.googleusercontent.com'],
   },
   reactStrictMode: false,
+  experimental: {
+    esmExternals: 'loose',
+    serverComponentsExternalPackages: ['lucide-react'],
+  },
+  webpack: (config) => {
+    return config;
+  },
 };
 
 export default nextConfig;
