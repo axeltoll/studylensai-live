@@ -4,7 +4,9 @@ const nextConfig = {
     domains: ['storage.googleapis.com', 'lh3.googleusercontent.com'],
   },
   reactStrictMode: false,
-  output: 'standalone'
+  output: 'standalone',
+  transpilePackages: [],
+  serverExternalPackages: []
 };
 
 module.exports = nextConfig; 
