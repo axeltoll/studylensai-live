@@ -1,0 +1,5 @@
+{
+  "buildCommand": "cd studylens-ai && npm run vercel-build",
+  "installCommand": "cd studylens-ai && npm install --no-save --legacy-peer-deps",
+  "outputDirectory": "studylens-ai/.next"
+} 
