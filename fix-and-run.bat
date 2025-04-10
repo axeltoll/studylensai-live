@@ -1,11 +1,15 @@
 @echo off
-echo Fixing Next.js application issues...
+SETLOCAL
 
-cd studygemini-ai
-echo Running npm install to ensure dependencies are properly installed...
-call npm install next@15.3.0 --save
+cd studylens-ai
 
-echo Starting the development server...
-call npm run dev
+echo Clearing npm cache...
+npm cache clean --force
 
-pause 
+echo Reinstalling dependencies...
+npm install
+
+echo Starting development server...
+npm run dev
+
+ENDLOCAL 

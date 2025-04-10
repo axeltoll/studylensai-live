@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="ambassadorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="badgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DBEAFE" />
+      <stop offset="100%" stop-color="#BAE6FD" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#EFF6FF" />
+  
+  <!-- Main Circle -->
+  <circle cx="80" cy="80" r="40" fill="url(#ambassadorGradient)" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.7;0.9" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Ambassador Badge -->
+  <g>
+    <!-- Badge Shape -->
+    <path d="M80,60 L92,66 L95,80 L80,88 L65,80 L68,66 Z" fill="white" stroke="#3B82F6" stroke-width="1.5">
+      <animate attributeName="transform" type="scale" values="1;1.05;1" dur="2s" repeatCount="indefinite" additive="sum" />
+    </path>
+    <!-- Badge Star -->
+    <path d="M80,66 L82,72 L88,72 L83,76 L85,82 L80,78 L75,82 L77,76 L72,72 L78,72 Z" fill="#3B82F6">
+      <animate attributeName="fill" values="#3B82F6;#06B6D4;#3B82F6" dur="3s" repeatCount="indefinite" />
+    </path>
+    <!-- Badge Ribbon Left -->
+    <path d="M75,80 L70,95" stroke="#3B82F6" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="d" values="M75,80 L70,95;M75,80 L68,93;M75,80 L70,95" dur="2s" repeatCount="indefinite" />
+    </path>
+    <!-- Badge Ribbon Right -->
+    <path d="M85,80 L90,95" stroke="#3B82F6" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="d" values="M85,80 L90,95;M85,80 L92,93;M85,80 L90,95" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- People Silhouettes -->
+  <g opacity="0.9">
+    <!-- Center Person -->
+    <circle cx="80" cy="100" r="8" fill="white" />
+    <!-- Left Person -->
+    <circle cx="60" cy="100" r="6" fill="white" opacity="0.8">
+      <animate attributeName="cx" values="60;58;60" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- Right Person -->
+    <circle cx="100" cy="100" r="6" fill="white" opacity="0.8">
+      <animate attributeName="cx" values="100;102;100" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <!-- Connecting Lines -->
+    <line x1="68" y1="100" x2="72" y2="100" stroke="white" stroke-width="1.5">
+      <animate attributeName="x1" values="68;66;68" dur="3s" repeatCount="indefinite" />
+    </line>
+    <line x1="88" y1="100" x2="92" y2="100" stroke="white" stroke-width="1.5">
+      <animate attributeName="x2" values="92;94;92" dur="3s" repeatCount="indefinite" />
+    </line>
+  </g>
+  
+  <!-- Sparkles -->
+  <g>
+    <!-- Sparkle 1 -->
+    <g opacity="0.8" transform="translate(45, 45)">
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="-5" y1="0" x2="5" y2="0" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" />
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="90 0 0" dur="4s" repeatCount="indefinite" additive="sum" />
+    </g>
+    <!-- Sparkle 2 -->
+    <g opacity="0.8" transform="translate(115, 45)">
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="-5" y1="0" x2="5" y2="0" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" />
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="90 0 0" dur="4.5s" repeatCount="indefinite" additive="sum" />
+    </g>
+    <!-- Sparkle 3 -->
+    <g opacity="0.8" transform="translate(115, 115)">
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="-5" y1="0" x2="5" y2="0" stroke="#3B82F6" stroke-width="1.5" stroke-linecap="round" />
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="90 0 0" dur="5s" repeatCount="indefinite" additive="sum" />
+    </g>
+    <!-- Sparkle 4 -->
+    <g opacity="0.8" transform="translate(45, 115)">
+      <line x1="0" y1="-5" x2="0" y2="5" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="-5" y1="0" x2="5" y2="0" stroke="#06B6D4" stroke-width="1.5" stroke-linecap="round" />
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2.2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="90 0 0" dur="4.2s" repeatCount="indefinite" additive="sum" />
+    </g>
+  </g>
+  
+  <!-- Badge -->
+  <circle cx="35" cy="35" r="15" fill="url(#ambassadorGradient)" />
+  <text x="35" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" font-weight="bold" fill="white">AMBASS</text>
+</svg> 

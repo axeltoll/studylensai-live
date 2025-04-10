@@ -1,12 +1,10 @@
 @echo off
-echo Setting up environment and starting Next.js...
+SETLOCAL
 
-cd studygemini-ai
-
-echo Setting NODE_PATH to include the local node_modules...
+cd studylens-ai
 set NODE_PATH=%CD%\node_modules
+echo NODE_PATH set to: %NODE_PATH%
 
-echo Starting the server with npx...
-call npx next dev
+npm run dev
 
-pause 
+ENDLOCAL 

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="studyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316" />
+      <stop offset="100%" stop-color="#EA580C" />
+    </linearGradient>
+    <linearGradient id="bookGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="100%" stop-color="#F97316" />
+    </linearGradient>
+    <linearGradient id="pageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FED7AA" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#FFF7ED" />
+  
+  <!-- Open Book Base -->
+  <path d="M40,90 Q80,70 120,90 L120,110 Q80,90 40,110 Z" fill="url(#bookGradient)" />
+  
+  <!-- Book Binding -->
+  <path d="M79,90 Q80,70 81,90 L81,110 Q80,90 79,110 Z" fill="#C2410C" />
+  
+  <!-- Left Page -->
+  <path d="M45,90 Q80,72 79,90 L79,110 Q80,92 45,110 Z" fill="url(#pageGradient)" />
+  
+  <!-- Right Page -->
+  <path d="M81,90 Q80,72 115,90 L115,110 Q80,92 81,110 Z" fill="url(#pageGradient)" />
+  
+  <!-- Text Lines on Left Page -->
+  <line x1="50" y1="95" x2="75" y2="95" stroke="#FDA4AF" stroke-width="1" />
+  <line x1="50" y1="100" x2="72" y2="100" stroke="#FDA4AF" stroke-width="1" />
+  <line x1="50" y1="105" x2="74" y2="105" stroke="#FDA4AF" stroke-width="1" />
+  
+  <!-- Text Lines on Right Page -->
+  <line x1="85" y1="95" x2="110" y2="95" stroke="#FDA4AF" stroke-width="1" />
+  <line x1="85" y1="100" x2="107" y2="100" stroke="#FDA4AF" stroke-width="1" />
+  <line x1="85" y1="105" x2="109" y2="105" stroke="#FDA4AF" stroke-width="1" />
+  
+  <!-- Floating Study Icons -->
+  <!-- Pencil -->
+  <path d="M50,60 L55,50 L60,55 Z" fill="#FED7AA" stroke="#F97316" stroke-width="1" />
+  <line x1="55" y1="50" x2="60" y2="55" stroke="#F97316" stroke-width="1" />
+  <line x1="50" y1="60" x2="55" y2="50" stroke="#F97316" stroke-width="1" />
+  
+  <!-- Lightbulb -->
+  <circle cx="100" cy="50" r="8" fill="#FDBA74" />
+  <path d="M100,58 L100,65" stroke="#F97316" stroke-width="1.5" />
+  <path d="M97,60 L103,60" stroke="#F97316" stroke-width="1" />
+  
+  <!-- Graduation Cap -->
+  <rect x="75" y="45" width="10" height="3" fill="#F97316" />
+  <path d="M65,48 L95,48 L80,56 Z" fill="#FB923C" />
+  <line x1="80" y1="48" x2="80" y2="56" stroke="#F97316" stroke-width="1" />
+  
+  <!-- Study Notes -->
+  <path d="M115,70 L125,70 L125,80 L115,80 Z" fill="white" stroke="#F97316" stroke-width="1" />
+  <line x1="117" y1="73" x2="123" y2="73" stroke="#F97316" stroke-width="0.75" />
+  <line x1="117" y1="75" x2="123" y2="75" stroke="#F97316" stroke-width="0.75" />
+  <line x1="117" y1="77" x2="121" y2="77" stroke="#F97316" stroke-width="0.75" />
+  
+  <!-- Animation: Floating Elements -->
+  <animateTransform
+    xlink:href="#lightbulb"
+    attributeName="transform"
+    type="translate"
+    values="0,0; 0,-3; 0,0"
+    dur="3s"
+    repeatCount="indefinite" />
+  
+  <!-- Study Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#studyGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">STUDY</text>
+</svg> 

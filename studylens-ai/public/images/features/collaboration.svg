@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="collaborationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7" />
+      <stop offset="100%" stop-color="#7E22CE" />
+    </linearGradient>
+    <linearGradient id="personGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" />
+      <stop offset="100%" stop-color="#9333EA" />
+    </linearGradient>
+    <linearGradient id="personGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E879F9" />
+      <stop offset="100%" stop-color="#C026D3" />
+    </linearGradient>
+    <linearGradient id="personGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D8B4FE" />
+      <stop offset="100%" stop-color="#A855F7" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#FAF5FF" />
+  
+  <!-- Connection Lines -->
+  <line x1="50" y1="60" x2="80" y2="80" stroke="#D8B4FE" stroke-width="2" />
+  <line x1="110" y1="60" x2="80" y2="80" stroke="#D8B4FE" stroke-width="2" />
+  <line x1="50" y1="110" x2="80" y2="80" stroke="#D8B4FE" stroke-width="2" />
+  <line x1="110" y1="110" x2="80" y2="80" stroke="#D8B4FE" stroke-width="2" />
+  
+  <!-- Central Hub -->
+  <circle cx="80" cy="80" r="15" fill="url(#collaborationGradient)" />
+  <circle cx="80" cy="80" r="10" fill="#FAF5FF" />
+  <circle cx="80" cy="80" r="6" fill="url(#collaborationGradient)" />
+  
+  <!-- Person 1 (top left) -->
+  <circle cx="50" cy="60" r="12" fill="url(#personGradient1)" />
+  <circle cx="50" cy="52" r="5" fill="#FAF5FF" /> <!-- Head -->
+  <path d="M45,62 Q50,68 55,62" stroke="#FAF5FF" stroke-width="1.5" fill="none" /> <!-- Smile -->
+  
+  <!-- Person 2 (top right) -->
+  <circle cx="110" cy="60" r="12" fill="url(#personGradient2)" />
+  <circle cx="110" cy="52" r="5" fill="#FAF5FF" /> <!-- Head -->
+  <path d="M105,62 Q110,68 115,62" stroke="#FAF5FF" stroke-width="1.5" fill="none" /> <!-- Smile -->
+  
+  <!-- Person 3 (bottom left) -->
+  <circle cx="50" cy="110" r="12" fill="url(#personGradient3)" />
+  <circle cx="50" cy="102" r="5" fill="#FAF5FF" /> <!-- Head -->
+  <path d="M45,112 Q50,118 55,112" stroke="#FAF5FF" stroke-width="1.5" fill="none" /> <!-- Smile -->
+  
+  <!-- Person 4 (bottom right) -->
+  <circle cx="110" cy="110" r="12" fill="url(#personGradient1)" />
+  <circle cx="110" cy="102" r="5" fill="#FAF5FF" /> <!-- Head -->
+  <path d="M105,112 Q110,118 115,112" stroke="#FAF5FF" stroke-width="1.5" fill="none" /> <!-- Smile -->
+  
+  <!-- Pulse Animation on Connection Lines -->
+  <circle cx="65" cy="70" r="3" fill="#A855F7">
+    <animate attributeName="cx" values="50;80" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="60;80" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="95" cy="70" r="3" fill="#A855F7">
+    <animate attributeName="cx" values="110;80" dur="1.5s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="60;80" dur="1.5s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Collaboration Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#collaborationGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white">TEAM</text>
+</svg> 

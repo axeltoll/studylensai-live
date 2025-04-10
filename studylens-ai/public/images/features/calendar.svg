@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="calendarGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="eventGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#FFFBEB" />
+  
+  <!-- Calendar Base -->
+  <rect x="40" y="45" width="80" height="75" rx="5" ry="5" fill="white" stroke="#FEF3C7" stroke-width="2" />
+  
+  <!-- Calendar Top Bar -->
+  <rect x="40" y="45" width="80" height="15" rx="5" ry="5" fill="#F59E0B" />
+  
+  <!-- Calendar Hanging Hooks -->
+  <rect x="55" y="40" width="5" height="5" rx="2" ry="2" fill="#D97706" />
+  <rect x="100" y="40" width="5" height="5" rx="2" ry="2" fill="#D97706" />
+  
+  <!-- Calendar Day Labels -->
+  <text x="50" y="55" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">M</text>
+  <text x="62" y="55" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">T</text>
+  <text x="74" y="55" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">W</text>
+  <text x="86" y="55" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">T</text>
+  <text x="98" y="55" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">F</text>
+  <text x="110" y="55" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">S</text>
+  
+  <!-- Calendar Grid Lines -->
+  <line x1="40" y1="70" x2="120" y2="70" stroke="#FEF3C7" stroke-width="1" />
+  <line x1="40" y1="85" x2="120" y2="85" stroke="#FEF3C7" stroke-width="1" />
+  <line x1="40" y1="100" x2="120" y2="100" stroke="#FEF3C7" stroke-width="1" />
+  
+  <line x1="58" y1="60" x2="58" y2="120" stroke="#FEF3C7" stroke-width="1" />
+  <line x1="70" y1="60" x2="70" y2="120" stroke="#FEF3C7" stroke-width="1" />
+  <line x1="82" y1="60" x2="82" y2="120" stroke="#FEF3C7" stroke-width="1" />
+  <line x1="94" y1="60" x2="94" y2="120" stroke="#FEF3C7" stroke-width="1" />
+  <line x1="106" y1="60" x2="106" y2="120" stroke="#FEF3C7" stroke-width="1" />
+  
+  <!-- Calendar Dates -->
+  <text x="49" y="80" font-family="Arial, sans-serif" font-size="8" fill="#78350F">1</text>
+  <text x="61" y="80" font-family="Arial, sans-serif" font-size="8" fill="#78350F">2</text>
+  <text x="73" y="80" font-family="Arial, sans-serif" font-size="8" fill="#78350F">3</text>
+  <text x="85" y="80" font-family="Arial, sans-serif" font-size="8" fill="#78350F">4</text>
+  <text x="97" y="80" font-family="Arial, sans-serif" font-size="8" fill="#78350F">5</text>
+  <text x="109" y="80" font-family="Arial, sans-serif" font-size="8" fill="#78350F">6</text>
+  
+  <text x="49" y="95" font-family="Arial, sans-serif" font-size="8" fill="#78350F">7</text>
+  <text x="61" y="95" font-family="Arial, sans-serif" font-size="8" fill="#78350F">8</text>
+  <text x="73" y="95" font-family="Arial, sans-serif" font-size="8" fill="#78350F">9</text>
+  <text x="85" y="95" font-family="Arial, sans-serif" font-size="8" fill="#78350F">10</text>
+  <text x="97" y="95" font-family="Arial, sans-serif" font-size="8" fill="#78350F">11</text>
+  <text x="109" y="95" font-family="Arial, sans-serif" font-size="8" fill="#78350F">12</text>
+  
+  <text x="49" y="110" font-family="Arial, sans-serif" font-size="8" fill="#78350F">13</text>
+  <text x="61" y="110" font-family="Arial, sans-serif" font-size="8" fill="#78350F">14</text>
+  <text x="73" y="110" font-family="Arial, sans-serif" font-size="8" fill="#F59E0B" font-weight="bold">15</text>
+  <text x="85" y="110" font-family="Arial, sans-serif" font-size="8" fill="#78350F">16</text>
+  <text x="97" y="110" font-family="Arial, sans-serif" font-size="8" fill="#78350F">17</text>
+  <text x="109" y="110" font-family="Arial, sans-serif" font-size="8" fill="#78350F">18</text>
+  
+  <!-- Today Highlight -->
+  <circle cx="76" cy="110" r="6" fill="#FEF3C7" />
+  
+  <!-- Calendar Events -->
+  <rect x="58" y="72" width="12" height="5" rx="2" ry="2" fill="url(#eventGradient)" />
+  <rect x="70" y="72" width="12" height="5" rx="2" ry="2" fill="#FEF3C7" />
+  <rect x="94" y="87" width="12" height="5" rx="2" ry="2" fill="url(#eventGradient)" />
+  <rect x="76" y="102" width="24" height="5" rx="2" ry="2" fill="url(#eventGradient)" />
+  
+  <!-- Notes/To-Do List -->
+  <rect x="40" y="125" width="80" height="20" rx="3" ry="3" fill="white" stroke="#F59E0B" stroke-width="1" />
+  
+  <!-- To-Do Items -->
+  <rect x="45" y="130" width="4" height="4" rx="1" ry="1" fill="#F59E0B" />
+  <line x1="53" y1="132" x2="73" y2="132" stroke="#FCD34D" stroke-width="1.5" />
+  
+  <rect x="45" y="138" width="4" height="4" rx="1" ry="1" fill="#F59E0B" />
+  <line x1="53" y1="140" x2="68" y2="140" stroke="#FCD34D" stroke-width="1.5" />
+  
+  <rect x="80" y="130" width="4" height="4" rx="1" ry="1" stroke="#F59E0B" stroke-width="1" fill="none" />
+  <line x1="88" y1="132" x2="108" y2="132" stroke="#FCD34D" stroke-width="1.5" />
+  
+  <rect x="80" y="138" width="4" height="4" rx="1" ry="1" stroke="#F59E0B" stroke-width="1" fill="none" />
+  <line x1="88" y1="140" x2="103" y2="140" stroke="#FCD34D" stroke-width="1.5" />
+  
+  <!-- Animation: Hovering Note -->
+  <g>
+    <rect x="90" y="40" width="40" height="30" rx="3" ry="3" fill="white" stroke="#F59E0B" stroke-width="1" />
+    <line x1="95" y1="50" x2="125" y2="50" stroke="#FEF3C7" stroke-width="2" />
+    <line x1="95" y1="57" x2="120" y2="57" stroke="#FEF3C7" stroke-width="2" />
+    <line x1="95" y1="64" x2="115" y2="64" stroke="#FEF3C7" stroke-width="2" />
+    <animate 
+      attributeName="transform" 
+      type="translate" 
+      values="0,0; 0,-5; 0,0" 
+      dur="4s" 
+      repeatCount="indefinite" />
+  </g>
+  
+  <!-- Calendar Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#calendarGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">DATE</text>
+</svg> 

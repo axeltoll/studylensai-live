@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+    <linearGradient id="dialGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEE2E2" />
+      <stop offset="100%" stop-color="#FECACA" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#FEF2F2" />
+  
+  <!-- Timer Body -->
+  <circle cx="80" cy="85" r="50" fill="white" stroke="#FECACA" stroke-width="2" />
+  <circle cx="80" cy="85" r="45" fill="#FEF2F2" stroke="#FECACA" stroke-width="1" />
+  
+  <!-- Timer Markers -->
+  <line x1="80" y1="45" x2="80" y2="50" stroke="#B91C1C" stroke-width="2" />
+  <line x1="80" y1="120" x2="80" y2="125" stroke="#B91C1C" stroke-width="2" />
+  <line x1="40" y1="85" x2="45" y2="85" stroke="#B91C1C" stroke-width="2" />
+  <line x1="115" y1="85" x2="120" y2="85" stroke="#B91C1C" stroke-width="2" />
+  
+  <!-- Minute Markers -->
+  <line x1="53" y1="58" x2="56" y2="61" stroke="#FECACA" stroke-width="1" />
+  <line x1="58" y1="53" x2="61" y2="56" stroke="#FECACA" stroke-width="1" />
+  <line x1="102" y1="58" x2="99" y2="61" stroke="#FECACA" stroke-width="1" />
+  <line x1="107" y1="53" x2="104" y2="56" stroke="#FECACA" stroke-width="1" />
+  <line x1="53" y1="112" x2="56" y2="109" stroke="#FECACA" stroke-width="1" />
+  <line x1="58" y1="117" x2="61" y2="114" stroke="#FECACA" stroke-width="1" />
+  <line x1="102" y1="112" x2="99" y2="109" stroke="#FECACA" stroke-width="1" />
+  <line x1="107" y1="117" x2="104" y2="114" stroke="#FECACA" stroke-width="1" />
+  
+  <!-- Timer Hands -->
+  <line x1="80" y1="85" x2="80" y2="55" stroke="#B91C1C" stroke-width="2" stroke-linecap="round">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      from="0 80 85" 
+      to="360 80 85" 
+      dur="60s" 
+      repeatCount="indefinite" />
+  </line>
+  <line x1="80" y1="85" x2="100" y2="85" stroke="#EF4444" stroke-width="2" stroke-linecap="round">
+    <animateTransform 
+      attributeName="transform" 
+      type="rotate" 
+      from="0 80 85" 
+      to="360 80 85" 
+      dur="3600s" 
+      repeatCount="indefinite" />
+  </line>
+  
+  <!-- Center Pin -->
+  <circle cx="80" cy="85" r="4" fill="url(#timerGradient)" />
+  
+  <!-- Timer Top Button -->
+  <rect x="75" y="30" width="10" height="10" rx="2" ry="2" fill="#FECACA" />
+  <rect x="77" y="25" width="6" height="5" rx="1" ry="1" fill="#FECACA" />
+  
+  <!-- Pomodoro Indicator -->
+  <circle cx="50" cy="40" r="10" fill="url(#timerGradient)" />
+  <circle cx="75" cy="40" r="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1" />
+  <circle cx="100" cy="40" r="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1" />
+  <circle cx="125" cy="40" r="10" fill="#FEE2E2" stroke="#FECACA" stroke-width="1" />
+  
+  <!-- Digital Time Display -->
+  <rect x="65" y="105" width="30" height="15" rx="2" ry="2" fill="white" stroke="#FECACA" stroke-width="1" />
+  <text x="80" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#B91C1C">25:00</text>
+  
+  <!-- Timer Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#timerGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">TIME</text>
+  
+  <!-- Animated Pulsing Effect -->
+  <circle cx="80" cy="85" r="0" fill="#EF4444" opacity="0.3">
+    <animate attributeName="r" values="0;45;0" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
+  </circle>
+</svg> 

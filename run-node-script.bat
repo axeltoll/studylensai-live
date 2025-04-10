@@ -1,4 +1,4 @@
 @echo off
-cd studygemini-ai
-node run-dev.js
+cd studylens-ai
+node %*
 pause 

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="quizGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="checkGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="wrongGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#DC2626" />
+    </linearGradient>
+    <filter id="glowEffect" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background Circle with subtle pulse animation -->
+  <circle cx="80" cy="80" r="70" fill="#FEF3C7">
+    <animate attributeName="r" values="70;73;70" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Quiz Paper -->
+  <rect x="40" y="30" width="80" height="100" rx="4" fill="white" stroke="#F59E0B" stroke-width="1.5" filter="url(#glowEffect)">
+    <animate attributeName="y" values="30;27;30" dur="3s" repeatCount="indefinite" />
+  </rect>
+  
+  <!-- Quiz Title -->
+  <rect x="50" y="40" width="60" height="8" rx="2" fill="#FEF3C7" />
+  
+  <!-- Quiz Questions with animations -->
+  <g>
+    <!-- Question 1 with check mark -->
+    <rect x="50" y="55" width="60" height="20" rx="2" fill="#F3F4F6" />
+    <rect x="55" y="60" width="40" height="4" rx="1" fill="#D1D5DB" />
+    <g>
+      <rect x="55" y="67" width="30" height="4" rx="1" fill="#D1D5DB" />
+      <rect x="55" y="67" width="30" height="4" rx="1" fill="#D1D5DB">
+        <animate attributeName="fill" values="#D1D5DB;#10B981;#10B981" dur="2s" begin="1s" fill="freeze" />
+      </rect>
+    </g>
+    
+    <!-- Check mark animation -->
+    <circle cx="95" cy="65" r="0" fill="url(#checkGradient)">
+      <animate attributeName="r" values="0;6;6" dur="1s" begin="1.5s" fill="freeze" />
+    </circle>
+    <path d="M92,65 L94,67 L98,63" stroke="white" stroke-width="0" fill="none">
+      <animate attributeName="stroke-width" values="0;1.5;1.5" dur="1s" begin="1.5s" fill="freeze" />
+    </path>
+  </g>
+  
+  <g>
+    <!-- Question 2 with wrong mark -->
+    <rect x="50" y="80" width="60" height="20" rx="2" fill="#F3F4F6" />
+    <rect x="55" y="85" width="40" height="4" rx="1" fill="#D1D5DB" />
+    <g>
+      <rect x="55" y="92" width="30" height="4" rx="1" fill="#D1D5DB" />
+      <rect x="55" y="92" width="30" height="4" rx="1" fill="#D1D5DB">
+        <animate attributeName="fill" values="#D1D5DB;#EF4444;#EF4444" dur="2s" begin="2.5s" fill="freeze" />
+      </rect>
+    </g>
+    
+    <!-- X mark animation -->
+    <circle cx="95" cy="90" r="0" fill="url(#wrongGradient)">
+      <animate attributeName="r" values="0;6;6" dur="1s" begin="3s" fill="freeze" />
+    </circle>
+    <path d="M92,87 L98,93 M98,87 L92,93" stroke="white" stroke-width="0" fill="none">
+      <animate attributeName="stroke-width" values="0;1.5;1.5" dur="1s" begin="3s" fill="freeze" />
+    </path>
+  </g>
+  
+  <g>
+    <!-- Question 3 (unanswered) -->
+    <rect x="50" y="105" width="60" height="20" rx="2" fill="#F3F4F6" />
+    <rect x="55" y="110" width="40" height="4" rx="1" fill="#D1D5DB" />
+    <rect x="55" y="117" width="30" height="4" rx="1" fill="#D1D5DB" />
+    
+    <!-- Pulsing circle for current question -->
+    <circle cx="95" cy="115" r="6" fill="#F3F4F6" stroke="#F59E0B" stroke-width="1.5">
+      <animate attributeName="r" values="6;7;6" dur="1.5s" repeatCount="indefinite" />
+      <animate attributeName="stroke-width" values="1.5;2;1.5" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <text x="95" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="#F59E0B">?</text>
+  </g>
+  
+  <!-- Progress Bar -->
+  <rect x="40" y="135" width="80" height="6" rx="3" fill="#F3F4F6" />
+  <rect x="40" y="135" width="26" height="6" rx="3" fill="url(#quizGradient)">
+    <animate attributeName="width" values="26;26;53;53" dur="4s" begin="1s" fill="freeze" />
+  </rect>
+  
+  <!-- Quiz Badge with pulsing effect -->
+  <circle cx="40" cy="35" r="15" fill="url(#quizGradient)" filter="url(#glowEffect)">
+    <animate attributeName="r" values="15;16;15" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="40" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="8" fill="white">QUIZ</text>
+  
+  <!-- Timer Animation -->
+  <g transform="translate(120, 40)">
+    <circle cx="0" cy="0" r="12" fill="white" stroke="#F59E0B" stroke-width="1.5" />
+    <path d="M0,-7 L0,0 L5,5" stroke="#F59E0B" stroke-width="1.5" fill="none" stroke-linecap="round">
+      <animateTransform 
+        attributeName="transform" 
+        type="rotate" 
+        from="0" 
+        to="360" 
+        dur="12s" 
+        repeatCount="indefinite" />
+    </path>
+    <circle cx="0" cy="0" r="1.5" fill="#F59E0B" />
+  </g>
+  
+  <!-- Score Counter -->
+  <g transform="translate(120, 120)">
+    <rect x="-15" y="-10" width="30" height="20" rx="4" fill="white" stroke="#F59E0B" stroke-width="1.5" />
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="10" fill="#F59E0B">
+      <animate attributeName="textContent" values="0/3;1/3;2/3" dur="4s" begin="1s" fill="freeze" />
+    </text>
+  </g>
+</svg> 

@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#4338CA" />
+    </linearGradient>
+    <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C7D2FE" />
+      <stop offset="100%" stop-color="#A5B4FC" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#EEF2FF" />
+  
+  <!-- Neural Network Nodes and Connections -->
+  <!-- Input Layer -->
+  <circle cx="40" cy="50" r="8" fill="url(#nodeGradient)" class="node" id="node1" />
+  <circle cx="40" cy="80" r="8" fill="url(#nodeGradient)" class="node" id="node2" />
+  <circle cx="40" cy="110" r="8" fill="url(#nodeGradient)" class="node" id="node3" />
+  
+  <!-- Hidden Layer -->
+  <circle cx="80" cy="40" r="8" fill="url(#nodeGradient)" class="node" id="node4" />
+  <circle cx="80" cy="70" r="8" fill="url(#nodeGradient)" class="node" id="node5" />
+  <circle cx="80" cy="100" r="8" fill="url(#nodeGradient)" class="node" id="node6" />
+  <circle cx="80" cy="130" r="8" fill="url(#nodeGradient)" class="node" id="node7" />
+  
+  <!-- Output Layer -->
+  <circle cx="120" cy="65" r="8" fill="url(#nodeGradient)" class="node" id="node8" />
+  <circle cx="120" cy="95" r="8" fill="url(#nodeGradient)" class="node" id="node9" />
+  
+  <!-- Neural Network Connections -->
+  <!-- Input to Hidden Layer -->
+  <path d="M48,50 L72,40" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,50 L72,70" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,50 L72,100" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,50 L72,130" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  
+  <path d="M48,80 L72,40" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,80 L72,70" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,80 L72,100" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,80 L72,130" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  
+  <path d="M48,110 L72,40" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,110 L72,70" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,110 L72,100" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M48,110 L72,130" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  
+  <!-- Hidden to Output Layer -->
+  <path d="M88,40 L112,65" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M88,40 L112,95" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  
+  <path d="M88,70 L112,65" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M88,70 L112,95" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  
+  <path d="M88,100 L112,65" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M88,100 L112,95" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  
+  <path d="M88,130 L112,65" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  <path d="M88,130 L112,95" stroke="url(#connectionGradient)" stroke-width="1.5" />
+  
+  <!-- Signal Animation -->
+  <circle r="3" fill="#4F46E5">
+    <animateMotion
+      path="M48,50 L72,70"
+      dur="2s"
+      repeatCount="indefinite" />
+  </circle>
+  
+  <circle r="3" fill="#4F46E5">
+    <animateMotion
+      path="M88,70 L112,95"
+      dur="2s"
+      repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Node Pulse Animation -->
+  <animate 
+    xlink:href=".node"
+    attributeName="r"
+    values="8;9;8"
+    dur="3s"
+    repeatCount="indefinite" />
+  
+  <!-- AI Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#aiGradient)" />
+  <text x="30" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">AI</text>
+</svg> 

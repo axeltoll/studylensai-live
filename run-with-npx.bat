@@ -1,12 +1,8 @@
 @echo off
-echo Running Next.js with npx...
+SETLOCAL
 
-cd studygemini-ai
+cd studylens-ai
+echo Running with npx next dev...
+npx next dev
 
-echo Installing next globally first...
-call npm install -g next@15.3.0
-
-echo Starting the application with npx...
-call npx next dev
-
-pause 
+ENDLOCAL 

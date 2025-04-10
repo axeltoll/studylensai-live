@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="versatileGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6" />
+      <stop offset="100%" stop-color="#0D9488" />
+    </linearGradient>
+    <linearGradient id="toolboxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CCFBF1" />
+      <stop offset="100%" stop-color="#5EEAD4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#F0FDFA" />
+  
+  <!-- Turquoise Circle -->
+  <circle cx="80" cy="80" r="40" fill="url(#versatileGradient)" opacity="0.9">
+    <animate attributeName="opacity" values="0.9;0.7;0.9" dur="2s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Toolbox -->
+  <g>
+    <!-- Toolbox Body -->
+    <rect x="60" y="70" width="40" height="30" rx="2" fill="white" stroke="#0D9488" stroke-width="2" />
+    <!-- Toolbox Top -->
+    <path d="M55,70 L65,60 H95 L105,70" fill="white" stroke="#0D9488" stroke-width="2" />
+    <!-- Toolbox Handle -->
+    <rect x="75" y="60" width="10" height="5" fill="white" stroke="#0D9488" stroke-width="1.5" />
+  </g>
+  
+  <!-- Tools -->
+  <g>
+    <!-- Wrench -->
+    <path d="M70,75 Q68,80 70,85 Q77,82 74,77 Q73,75 70,75" fill="white" stroke="#0D9488" stroke-width="1.5">
+      <animate attributeName="transform" type="rotate" from="0 70 80" to="10 70 80" dur="3s" repeatCount="indefinite" />
+    </path>
+    
+    <!-- Screwdriver -->
+    <path d="M80,75 L80,85" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" />
+    <rect x="78" y="75" width="4" height="2" fill="#0D9488" rx="1" />
+    
+    <!-- Hammer -->
+    <path d="M90,75 L90,82" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round" />
+    <rect x="87" y="75" width="6" height="3" fill="#0D9488" rx="1">
+      <animate attributeName="transform" type="rotate" from="0 90 75" to="-10 90 75" dur="2.5s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Animation Elements -->
+  <g opacity="0.7">
+    <!-- Gear 1 -->
+    <path d="M45,60 L45,55 L50,52.5 L55,55 L55,60 L50,62.5 Z" fill="none" stroke="#14B8A6" stroke-width="1.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 50 60" to="360 50 60" dur="10s" repeatCount="indefinite" />
+    </path>
+    <!-- Gear 2 -->
+    <path d="M100,50 L100,45 L105,42.5 L110,45 L110,50 L105,52.5 Z" fill="none" stroke="#14B8A6" stroke-width="1.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 105 50" to="-360 105 50" dur="8s" repeatCount="indefinite" />
+    </path>
+    <!-- Gear 3 -->
+    <path d="M115,90 L115,85 L120,82.5 L125,85 L125,90 L120,92.5 Z" fill="none" stroke="#14B8A6" stroke-width="1.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 120 90" to="360 120 90" dur="12s" repeatCount="indefinite" />
+    </path>
+    <!-- Gear 4 -->
+    <path d="M45,110 L45,105 L50,102.5 L55,105 L55,110 L50,112.5 Z" fill="none" stroke="#14B8A6" stroke-width="1.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 50 110" to="-360 50 110" dur="9s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Connecting Lines -->
+  <g opacity="0.5">
+    <line x1="55" y1="60" x2="70" y2="75" stroke="#14B8A6" stroke-width="1" stroke-dasharray="2,2">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite" />
+    </line>
+    <line x1="105" y1="50" x2="90" y2="75" stroke="#14B8A6" stroke-width="1" stroke-dasharray="2,2">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2.5s" repeatCount="indefinite" />
+    </line>
+    <line x1="120" y1="90" x2="95" y2="85" stroke="#14B8A6" stroke-width="1" stroke-dasharray="2,2">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="3s" repeatCount="indefinite" />
+    </line>
+    <line x1="50" y1="110" x2="65" y2="85" stroke="#14B8A6" stroke-width="1" stroke-dasharray="2,2">
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2.2s" repeatCount="indefinite" />
+    </line>
+  </g>
+  
+  <!-- Badge -->
+  <circle cx="35" cy="35" r="15" fill="url(#versatileGradient)" />
+  <text x="35" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">TOOLS</text>
+</svg> 

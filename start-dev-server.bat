@@ -1,7 +1,7 @@
 @echo off
-echo Starting Next.js development server...
-
-cd studygemini-ai
-call npm run dev
+SETLOCAL
+cd studylens-ai
+npm run dev
+ENDLOCAL
 
 pause 

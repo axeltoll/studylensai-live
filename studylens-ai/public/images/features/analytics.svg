@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="analyticsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#EFF6FF" />
+  
+  <!-- Chart Base -->
+  <rect x="45" y="50" width="70" height="70" rx="3" ry="3" fill="white" stroke="#3B82F6" stroke-width="2" />
+  
+  <!-- Chart Grid Lines -->
+  <path d="M45,60 L115,60" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M45,70 L115,70" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M45,80 L115,80" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M45,90 L115,90" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M45,100 L115,100" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M55,50 L55,120" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M65,50 L65,120" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M75,50 L75,120" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M85,50 L85,120" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M95,50 L95,120" stroke="#BFDBFE" stroke-width="1" />
+  <path d="M105,50 L105,120" stroke="#BFDBFE" stroke-width="1" />
+  
+  <!-- Bar Chart -->
+  <rect x="55" y="95" width="10" height="15" fill="#3B82F6" />
+  <rect x="75" y="85" width="10" height="25" fill="#3B82F6" />
+  <rect x="95" y="70" width="10" height="40" fill="#3B82F6" />
+  
+  <!-- Line Chart -->
+  <path d="M55,85 L75,70 L95,60" stroke="#1D4ED8" stroke-width="2" fill="none" />
+  <circle cx="55" cy="85" r="3" fill="#1D4ED8" />
+  <circle cx="75" cy="70" r="3" fill="#1D4ED8" />
+  <circle cx="95" cy="60" r="3" fill="#1D4ED8" />
+  
+  <!-- Pie Chart -->
+  <circle cx="130" cy="65" r="15" fill="white" stroke="#3B82F6" stroke-width="1" />
+  <path d="M130,65 L130,50 A15,15 0 0,1 145,65 Z" fill="#3B82F6" />
+  <path d="M130,65 L145,65 A15,15 0 0,1 130,80 Z" fill="#93C5FD" />
+  <path d="M130,65 L130,80 A15,15 0 0,1 115,65 Z" fill="#DBEAFE" />
+  <path d="M130,65 L115,65 A15,15 0 0,1 130,50 Z" fill="#1D4ED8" />
+  
+  <!-- Analytics Badge -->
+  <circle cx="115" cy="45" r="15" fill="url(#analyticsGradient)" />
+  <text x="115" y="49" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">STATS</text>
+</svg> 

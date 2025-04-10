@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="dashboardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="pieGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93C5FD" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+    <linearGradient id="pieGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BFDBFE" />
+      <stop offset="100%" stop-color="#93C5FD" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="80" cy="80" r="70" fill="#EFF6FF" />
+  
+  <!-- Dashboard Panel Background -->
+  <rect x="35" y="35" width="90" height="90" rx="6" ry="6" fill="white" stroke="#BFDBFE" stroke-width="2" />
+  
+  <!-- Header Bar -->
+  <rect x="35" y="35" width="90" height="12" rx="6" ry="6" fill="#3B82F6" />
+  
+  <!-- Control Buttons -->
+  <circle cx="43" cy="41" r="2" fill="#93C5FD" />
+  <circle cx="50" cy="41" r="2" fill="#93C5FD" />
+  <circle cx="57" cy="41" r="2" fill="#93C5FD" />
+  
+  <!-- Content Sections -->
+  <!-- Sidebar -->
+  <rect x="35" y="47" width="20" height="78" fill="#DBEAFE" />
+  
+  <!-- Sidebar Menu Items -->
+  <rect x="40" y="55" width="10" height="3" rx="1" ry="1" fill="#60A5FA" />
+  <rect x="40" y="65" width="10" height="3" rx="1" ry="1" fill="#60A5FA" />
+  <rect x="40" y="75" width="10" height="3" rx="1" ry="1" fill="#60A5FA" />
+  <rect x="40" y="85" width="10" height="3" rx="1" ry="1" fill="#60A5FA" />
+  <rect x="40" y="95" width="10" height="3" rx="1" ry="1" fill="#60A5FA" />
+  
+  <!-- Main Content Area - Charts and Widgets -->
+  <!-- Bar Chart -->
+  <rect x="65" y="55" width="8" height="25" rx="1" ry="1" fill="url(#chartGradient)" />
+  <rect x="77" y="65" width="8" height="15" rx="1" ry="1" fill="url(#chartGradient)" />
+  <rect x="89" y="60" width="8" height="20" rx="1" ry="1" fill="url(#chartGradient)" />
+  <rect x="101" y="50" width="8" height="30" rx="1" ry="1" fill="url(#chartGradient)" />
+  
+  <!-- Chart X-Axis -->
+  <line x1="60" y1="80" x2="115" y2="80" stroke="#64748B" stroke-width="1" />
+  
+  <!-- Line Chart -->
+  <polyline points="60,100 75,110 85,95 95,105 110,90" 
+    fill="none" stroke="#3B82F6" stroke-width="2" 
+    stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Pie Chart -->
+  <path d="M75,120 L75,105 A15,15 0 0,1 90,120 Z" fill="url(#pieGradient1)" />
+  <path d="M75,120 L90,120 A15,15 0 0,1 75,135 Z" fill="url(#pieGradient2)" />
+  <path d="M75,120 L75,135 A15,15 0 0,1 60,120 Z" fill="#DBEAFE" />
+  <path d="M75,120 L60,120 A15,15 0 0,1 75,105 Z" fill="#3B82F6" />
+  
+  <!-- Data Widget -->
+  <rect x="95" y="115" width="20" height="20" rx="3" ry="3" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1" />
+  <line x1="100" y1="120" x2="110" y2="120" stroke="#3B82F6" stroke-width="1" />
+  <line x1="100" y1="125" x2="107" y2="125" stroke="#3B82F6" stroke-width="1" />
+  <line x1="100" y1="130" x2="109" y2="130" stroke="#3B82F6" stroke-width="1" />
+  
+  <!-- Dashboard Animation -->
+  <circle cx="75" cy="110" r="2" fill="#3B82F6">
+    <animate 
+      attributeName="cy" 
+      values="110;95;105;90;110" 
+      dur="3s" 
+      repeatCount="indefinite" />
+    <animate 
+      attributeName="cx" 
+      values="75;85;95;110;75" 
+      dur="3s" 
+      repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Dashboard Badge -->
+  <circle cx="30" cy="30" r="15" fill="url(#dashboardGradient)" />
+  <text x="30" y="33" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">DASH</text>
+</svg> 

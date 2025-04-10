@@ -31,7 +31,7 @@ function ResourcesPage() {
         setIsLoading(true);
         
         // Load global chat history from localStorage
-        const globalHistoryStr = localStorage.getItem('studygemini_chat_history_global');
+        const globalHistoryStr = localStorage.getItem('studylens_chat_history_global');
         let allActivities: Activity[] = [];
         
         if (globalHistoryStr) {
@@ -47,7 +47,7 @@ function ResourcesPage() {
         const chatTypes = ['study', 'essay', 'code', 'general'];
         
         for (const chatType of chatTypes) {
-          const typeHistoryStr = localStorage.getItem(`studygemini_chat_history_${chatType}`);
+          const typeHistoryStr = localStorage.getItem(`studylens_chat_history_${chatType}`);
           
           if (typeHistoryStr) {
             try {

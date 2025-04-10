@@ -1,27 +1,26 @@
 @echo off
-echo Fixing Next.js application...
+SETLOCAL
 
-cd studygemini-ai
+cd studylens-ai
 
-echo Cleaning node_modules to ensure a fresh start...
-if exist node_modules (
-    echo Removing existing node_modules...
-    rd /s /q node_modules
-)
+echo Checking Node and NPM versions...
+node -v
+npm -v
 
-echo Removing package-lock.json...
-if exist package-lock.json (
-    del package-lock.json
-)
+echo Clearing npm cache...
+npm cache clean --force
 
-echo Installing dependencies from scratch...
-call npm install
+echo Deleting node_modules directory...
+rmdir /s /q node_modules
 
-echo Installing Next.js specifically...
-call npm install next@15.3.0 --save
+echo Deleting package-lock.json file...
+del package-lock.json
 
-echo Installation complete! Now you can run:
-echo npm run dev
-echo inside the studygemini-ai directory to start the application.
+echo Reinstalling dependencies...
+npm install
 
-pause 
+echo Dependencies reinstalled.
+echo You can now run 'npm run dev' or one of the other batch scripts
+echo inside the studylens-ai directory to start the application.
+
+ENDLOCAL 
