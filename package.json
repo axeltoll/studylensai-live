@@ -1,13 +1,13 @@
 {
-  "name": "studylens-ai-root",
+  "name": "studylens-ai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cd studygemini-ai && npm run dev",
-    "build": "cd studygemini-ai && npm run build",
-    "start": "cd studygemini-ai && npm run start",
-    "vercel-build": "cd studygemini-ai && npm run build",
-    "postinstall": "cd studygemini-ai && npm install"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "vercel-build": "node vercel-build.js",
+    "lint": "next lint"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",

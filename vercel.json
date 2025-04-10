@@ -1,8 +1,8 @@
 {
   "framework": "nextjs",
-  "buildCommand": "cd studygemini-ai && npm run build",
-  "installCommand": "cd studygemini-ai && npm install",
-  "outputDirectory": "studygemini-ai/.next",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
   "headers": [
     {
       "source": "/(.*)",
