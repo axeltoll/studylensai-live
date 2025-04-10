@@ -4,7 +4,6 @@ const nextConfig = {
     domains: ['storage.googleapis.com', 'lh3.googleusercontent.com'],
   },
   reactStrictMode: false,
-  swcMinify: true,
   output: 'standalone',
 };
 
