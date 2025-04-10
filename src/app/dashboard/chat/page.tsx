@@ -2,12 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Bot, BookOpen, Code, PenTool, Search, Globe, Download, DownloadCloud, FileCode, Lightbulb } from 'lucide-react';
-import withAuth from '@/components/auth/withAuth';
-import Chat from '@/components/dashboard/Chat';
-import Header from '@/components/dashboard/Header';
-import PromptLimitWrapper from '@/components/dashboard/PromptLimitWrapper';
+import withAuth from '@/app/components/auth/withAuth';
+import Chat from '@/app/components/dashboard/Chat';
+import Header from '@/app/components/dashboard/Header';
+import PromptLimitWrapper from '@/app/components/dashboard/PromptLimitWrapper';
 import { useSearchParams } from 'next/navigation';
-import LinkComponent from '@/components/ui/link';
+import LinkComponent from '@/app/components/ui/link';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import Image from 'next/image';
 
