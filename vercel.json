@@ -14,5 +14,5 @@
       ]
     }
   ],
-  "projectDirectory": "src"
+  "rootDirectory": "."
 } 
