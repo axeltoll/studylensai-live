@@ -1,8 +1,8 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { User, onAuthStateChanged } from 'firebase/auth';
-import { auth } from '@/lib/firebase/firebase';
+import { User, onAuthStateChanged, getIdToken } from 'firebase/auth';
+import { auth } from '@/lib/firebase/client';
 
 interface AuthContextType {
   user: User | null;
@@ -26,6 +26,8 @@ interface AuthContextType {
     paymentGracePeriodEnd: Date | null;
   };
   updatePromptUsage: () => Promise<void>;
+  refreshUserData: () => Promise<void>;
+  getAuthToken: () => Promise<string>;
 }
 
 const AuthContext = createContext<AuthContextType>({ 
@@ -49,7 +51,9 @@ const AuthContext = createContext<AuthContextType>({
     paymentFailedAt: null,
     paymentGracePeriodEnd: null
   },
-  updatePromptUsage: async () => {}
+  updatePromptUsage: async () => {},
+  refreshUserData: async () => {},
+  getAuthToken: async () => ''
 });
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -74,15 +78,44 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     paymentGracePeriodEnd: null as Date | null
   });
 
+  // Helper function to get the current user's auth token
+  const getAuthToken = async (): Promise<string> => {
+    if (!user) return '';
+    try {
+      return await getIdToken(user);
+    } catch (error) {
+      console.error('Error getting auth token:', error);
+      return '';
+    }
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       
       if (currentUser) {
-        // Fetch user subscription and trial status
-        await checkUserSubscription(currentUser.uid);
-        // Fetch prompt usage
-        await fetchPromptUsage(currentUser.uid);
+        // Fetch user data from server
+        await fetchUserData();
+      } else {
+        // Reset state to defaults when logged out
+        setUserTier('free');
+        setTrialInfo({
+          isInTrial: false,
+          trialStartDate: null,
+          trialEndDate: null,
+          daysLeft: 0
+        });
+        setPromptUsage({
+          used: 0,
+          limit: 20,
+          resetDate: null,
+          unlimited: false
+        });
+        setSubscription({
+          status: 'inactive',
+          paymentFailedAt: null,
+          paymentGracePeriodEnd: null
+        });
       }
       
       setLoading(false);
@@ -92,22 +125,15 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     return () => unsubscribe();
   }, []);
   
-  // Calculate days left in trial
-  const calculateDaysLeft = (endDate: Date | null): number => {
-    if (!endDate) return 0;
-    
-    const now = new Date();
-    const diffTime = endDate.getTime() - now.getTime();
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
-    return Math.max(0, diffDays);
-  };
-  
-  // Function to check user's subscription status
-  const checkUserSubscription = async (uid: string) => {
+  // Function to fetch user data from the server
+  const fetchUserData = async () => {
+    if (!user) return;
+
     try {
-      // Special handling for founder account
-      if (user && user.email === 'axel@funnel-profits.com') {
+      const token = await getAuthToken();
+      
+      // Handle temporary founder account until server implementation is complete
+      if (user.email === 'axel@funnel-profits.com') {
         console.log('Founder account detected:', user.email);
         setUserTier('founder');
         setTrialInfo({
@@ -121,210 +147,95 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           paymentFailedAt: null,
           paymentGracePeriodEnd: null
         });
-        setPromptUsage(prev => ({
-          ...prev,
-          unlimited: true,
-          limit: Infinity
-        }));
-        return; // Skip the rest of the function
-      }
-      
-      // In a real app, you would call your backend API or Firestore
-      // For this example, we're simulating the subscription status
-      
-      // Check local storage for previous trials to prevent multiple trials
-      const hasHadTrial = localStorage.getItem(`${uid}_hadTrial`) === 'true';
-      
-      // Get stored trial dates from localStorage (if any)
-      const storedTrialStart = localStorage.getItem(`${uid}_trialStart`);
-      const storedTrialEnd = localStorage.getItem(`${uid}_trialEnd`);
-      
-      // Check if user is in a paid subscription
-      const isPro = localStorage.getItem(`${uid}_isPro`) === 'true';
-      
-      if (isPro) {
-        setUserTier('pro');
-        setTrialInfo({
-          isInTrial: false,
-          trialStartDate: null,
-          trialEndDate: null,
-          daysLeft: 0
-        });
-        setSubscription({
-          status: 'active',
-          paymentFailedAt: null,
-          paymentGracePeriodEnd: null
-        });
-      } 
-      else if (storedTrialStart && storedTrialEnd) {
-        // User has an existing trial
-        const trialStart = new Date(storedTrialStart);
-        const trialEnd = new Date(storedTrialEnd);
-        const now = new Date();
-        
-        if (now > trialEnd) {
-          // Trial has ended
-          setUserTier('free');
-          setTrialInfo({
-            isInTrial: false,
-            trialStartDate: trialStart,
-            trialEndDate: trialEnd,
-            daysLeft: 0
-          });
-          setSubscription({
-            status: 'expired',
-            paymentFailedAt: trialEnd,
-            paymentGracePeriodEnd: new Date(trialEnd.getTime() + 24 * 60 * 60 * 1000) // 24 hours grace period
-          });
-        } else {
-          // Still in trial
-          setUserTier('free');
-          const daysLeft = calculateDaysLeft(trialEnd);
-          setTrialInfo({
-            isInTrial: true,
-            trialStartDate: trialStart,
-            trialEndDate: trialEnd,
-            daysLeft
-          });
-          setSubscription({
-            status: 'trial',
-            paymentFailedAt: null,
-            paymentGracePeriodEnd: null
-          });
-        }
-      } 
-      else if (!hasHadTrial) {
-        // Start a new trial
-        const now = new Date();
-        const trialEnd = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000); // 3 days trial
-        
-        localStorage.setItem(`${uid}_trialStart`, now.toISOString());
-        localStorage.setItem(`${uid}_trialEnd`, trialEnd.toISOString());
-        localStorage.setItem(`${uid}_hadTrial`, 'true');
-        
-        setUserTier('free');
-        setTrialInfo({
-          isInTrial: true,
-          trialStartDate: now,
-          trialEndDate: trialEnd,
-          daysLeft: 3
-        });
-        setSubscription({
-          status: 'trial',
-          paymentFailedAt: null,
-          paymentGracePeriodEnd: null
-        });
-      } 
-      else {
-        // No trial, no pro - just a free user
-        setUserTier('free');
-        setTrialInfo({
-          isInTrial: false,
-          trialStartDate: null,
-          trialEndDate: null,
-          daysLeft: 0
-        });
-        setSubscription({
-          status: 'inactive',
-          paymentFailedAt: null,
-          paymentGracePeriodEnd: null
-        });
-      }
-    } catch (error) {
-      console.error('Error checking subscription:', error);
-      setUserTier('free');
-    }
-  };
-  
-  // Function to fetch user's prompt usage
-  const fetchPromptUsage = async (uid: string) => {
-    try {
-      // Check if the user is a founder with unlimited prompts
-      if (user && (user.email === 'axel@funnel-profits.com' || userTier === 'founder')) {
         setPromptUsage({
           used: 0,
           limit: Infinity,
           resetDate: null,
           unlimited: true
         });
-        
-        // Ensure user has founder tier if they have the founder email
-        if (user.email === 'axel@funnel-profits.com' && userTier !== 'founder') {
-          setUserTier('founder');
-          setSubscription({
-            status: 'founder',
-            paymentFailedAt: null,
-            paymentGracePeriodEnd: null
-          });
-        }
-        
-        return; // Skip the rest of the processing
+        return;
       }
-
-      // In a real app, fetch from backend
-      // For now, use localStorage to simulate
       
-      const now = new Date();
-      const storedResetDate = localStorage.getItem(`${uid}_promptResetDate`);
-      const resetDate = storedResetDate ? new Date(storedResetDate) : null;
-      
-      // Determine the prompt limit based on user tier
-      const getPromptLimit = () => {
-        if (userTier === 'founder') {
-          return Infinity; // Founder gets unlimited prompts
-        } else if (userTier === 'pro') {
-          return 50; // Pro users get 50 prompts daily
-        } else {
-          return 20; // Free/trial users get 20 prompts daily
+      // Call the server API to get user profile data
+      const response = await fetch('/api/user/profile', {
+        headers: {
+          'Authorization': `Bearer ${token}`
         }
-      };
+      });
       
-      // Check if we need to reset the counter (daily)
-      if (!resetDate || now > resetDate) {
-        // Set next reset date to 1 day from now
-        const nextReset = new Date(now.getTime() + 1 * 24 * 60 * 60 * 1000);
-        localStorage.setItem(`${uid}_promptResetDate`, nextReset.toISOString());
-        localStorage.setItem(`${uid}_promptsUsed`, '0');
-        
-        setPromptUsage({
-          used: 0,
-          limit: getPromptLimit(),
-          resetDate: nextReset,
-          unlimited: userTier === 'founder'
+      if (!response.ok) {
+        throw new Error('Failed to fetch user data');
+      }
+      
+      const data = await response.json();
+      
+      // Update state with data from server
+      if (data.user) {
+        setUserTier(data.user.subscriptionTier || 'free');
+        setTrialInfo({
+          isInTrial: data.user.trial.isInTrial || false,
+          trialStartDate: data.user.trial.trialStartDate ? new Date(data.user.trial.trialStartDate) : null,
+          trialEndDate: data.user.trial.trialEndDate ? new Date(data.user.trial.trialEndDate) : null,
+          daysLeft: data.user.trial.daysLeft || 0
         });
-      } else {
-        // Get current usage
-        const used = parseInt(localStorage.getItem(`${uid}_promptsUsed`) || '0', 10);
-        
+        setSubscription({
+          status: data.user.subscriptionStatus || 'inactive',
+          paymentFailedAt: null, // Add if you have this data from server
+          paymentGracePeriodEnd: null // Add if you have this data from server
+        });
+      }
+      
+      if (data.usage) {
         setPromptUsage({
-          used,
-          limit: getPromptLimit(),
-          resetDate,
-          unlimited: userTier === 'founder'
+          used: data.usage.used || 0,
+          limit: data.usage.limit || 20,
+          resetDate: data.usage.resetDate ? new Date(data.usage.resetDate) : null,
+          unlimited: data.usage.unlimited || false
         });
       }
     } catch (error) {
-      console.error('Error fetching prompt usage:', error);
+      console.error('Error fetching user data:', error);
+      
+      // Fall back to defaults in case of error
+      setUserTier('free');
+      setTrialInfo({
+        isInTrial: false,
+        trialStartDate: null,
+        trialEndDate: null,
+        daysLeft: 0
+      });
+      setPromptUsage({
+        used: 0,
+        limit: 20,
+        resetDate: null,
+        unlimited: false
+      });
+      setSubscription({
+        status: 'inactive',
+        paymentFailedAt: null,
+        paymentGracePeriodEnd: null
+      });
     }
+  };
+  
+  // Function to refresh user data (called after actions that change user state)
+  const refreshUserData = async () => {
+    await fetchUserData();
   };
   
   // Function to update prompt usage after the user sends a prompt
   const updatePromptUsage = async () => {
-    if (!user) return;
+    if (!user || promptUsage.unlimited) return;
     
     try {
-      // If user has unlimited prompts (founder), don't update the count
-      if (promptUsage.unlimited) {
-        return;
-      }
+      // Update local state optimistically
+      setPromptUsage(prev => ({
+        ...prev,
+        used: prev.used + 1
+      }));
       
-      const currentUsed = promptUsage.used + 1;
-      localStorage.setItem(`${user.uid}_promptsUsed`, currentUsed.toString());
-      
-      setPromptUsage({
-        ...promptUsage,
-        used: currentUsed
-      });
+      // The actual increment happens on the server side when API calls are made
+      // This just updates the UI to stay in sync
     } catch (error) {
       console.error('Error updating prompt usage:', error);
     }
@@ -338,7 +249,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       trialInfo, 
       promptUsage, 
       subscription,
-      updatePromptUsage
+      updatePromptUsage,
+      refreshUserData,
+      getAuthToken
     }}>
       {children}
     </AuthContext.Provider>

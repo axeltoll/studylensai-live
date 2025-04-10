@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-// import { getAuth } from '@clerk/nextjs/server';
+import { verifyAuthToken } from '@/lib/firebase/admin';
+import { incrementPromptUsage } from '@/lib/firebase/firestore';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import OpenAI from 'openai';
 
@@ -13,14 +14,29 @@ const openai = new OpenAI({
 
 export async function POST(req: NextRequest) {
   try {
-    // Authentication is temporarily bypassed to fix integration issues
-    // const auth = getAuth(req);
-    // if (!auth.userId) {
-    //   return NextResponse.json(
-    //     { error: 'Unauthorized: Please log in to use this feature' },
-    //     { status: 401 }
-    //   );
-    // }
+    // Verify user authentication
+    const authHeader = req.headers.get('Authorization');
+    const decodedToken = await verifyAuthToken(authHeader);
+    
+    if (!decodedToken) {
+      return NextResponse.json(
+        { error: 'Unauthorized: Please log in to use this feature' },
+        { status: 401 }
+      );
+    }
+    
+    // Check and increment usage limits
+    const canUsePrompt = await incrementPromptUsage(decodedToken.uid);
+    
+    // Allow founders to bypass usage limits
+    const isFounder = decodedToken.tier === 'founder' || decodedToken.email === 'axel@funnel-profits.com';
+    
+    if (!canUsePrompt && !isFounder) {
+      return NextResponse.json(
+        { error: 'Usage limit reached: Please upgrade your plan or try again after the reset period' },
+        { status: 403 }
+      );
+    }
 
     // Parse the request body
     const body = await req.json();
