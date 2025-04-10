@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "cd studygemini-ai && npm run vercel-build",
+  "buildCommand": "cd studygemini-ai && npm run build",
   "installCommand": "cd studygemini-ai && npm install --no-save --legacy-peer-deps",
   "outputDirectory": "studygemini-ai/.next"
 } 
