@@ -7,6 +7,14 @@ const nextConfig = {
   output: 'standalone',
   experimental: {
     optimizePackageImports: ['lucide-react']
+  },
+  // Ensure both @/app/components and @/components paths work
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@/components': 'src/app/components'
+    };
+    return config;
   }
 };
 
