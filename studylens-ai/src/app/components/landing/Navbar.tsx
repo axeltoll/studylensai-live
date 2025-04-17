@@ -3,12 +3,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import AuthModal from '@/app/components/auth/AuthModal';
+import AuthModal from '@/components/auth/AuthModal';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { signOut } from 'firebase/auth';
 import { auth } from '@/lib/firebase/firebase';
 import toast from 'react-hot-toast';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {

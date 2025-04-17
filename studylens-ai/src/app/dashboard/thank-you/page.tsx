@@ -3,11 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/lib/contexts/AuthContext';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/app/components/ui/card';
-import { Button } from '@/app/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { CalendarCheck, Check, CreditCard, X, Loader2 } from 'lucide-react';
 import Link from 'next/link';
-import withAuth from '@/app/components/auth/withAuth';
+import withAuth from '@/components/auth/withAuth';
 import Image from 'next/image';
 import toast from 'react-hot-toast';
 

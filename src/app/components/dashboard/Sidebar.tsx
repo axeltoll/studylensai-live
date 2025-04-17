@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import LinkComponent from '@/app/components/ui/link';
+import LinkComponent from '@/components/ui/link';
 import Image from 'next/image';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { 

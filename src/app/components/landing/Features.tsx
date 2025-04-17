@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 
 const Features = () => {
   return (

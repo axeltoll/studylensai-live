@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { useTheme } from '@/lib/contexts/ThemeContext';
 import { X, CheckCircle } from 'lucide-react';
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import withAuth from '@/app/components/auth/withAuth';
+import withAuth from '@/components/auth/withAuth';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { BookOpen, PenTool, Code, Search, FileText, Clock, Calendar, Filter, SortDesc, List, Grid, MessageSquare } from 'lucide-react';
 import Link from 'next/link';

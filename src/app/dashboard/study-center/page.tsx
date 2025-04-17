@@ -4,7 +4,7 @@ import React from 'react';
 import { BookOpen, Code, PenTool } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import withAuth from '@/app/components/auth/withAuth';
+import withAuth from '@/components/auth/withAuth';
 
 function StudyCenterPage() {
   return (

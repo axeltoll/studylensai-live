@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '@/app/components/ui/button';
-import AuthModal from '@/app/components/auth/AuthModal';
+import { Button } from '@/components/ui/button';
+import AuthModal from '@/components/auth/AuthModal';
 
 const Hero = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = React.useState(false);

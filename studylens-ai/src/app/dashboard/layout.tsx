@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import Sidebar from '@/app/components/dashboard/Sidebar';
-import Header from '@/app/components/dashboard/Header';
-import Providers from '@/app/components/Providers';
-import UpgradePopup from '@/app/components/dashboard/UpgradePopup';
+import Sidebar from '@/components/dashboard/Sidebar';
+import Header from '@/components/dashboard/Header';
+import Providers from '@/components/Providers';
+import UpgradePopup from '@/components/dashboard/UpgradePopup';
 import { useUser } from '@/app/context/UserContext';
 import { Menu } from 'lucide-react';
 import { usePathname } from 'next/navigation';

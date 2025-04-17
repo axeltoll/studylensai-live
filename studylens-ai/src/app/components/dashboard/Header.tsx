@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import LinkComponent from '@/app/components/ui/link';
+import LinkComponent from '@/components/ui/link';
 import { Search, Bell, ChevronDown, MessageSquare, Settings, LogOut, CreditCard, User, HelpCircle, ChevronLeft } from 'lucide-react';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { signOut } from 'firebase/auth';

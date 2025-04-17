@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import withAuth from '@/app/components/auth/withAuth';
+import withAuth from '@/components/auth/withAuth';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import toast from 'react-hot-toast';
 import { 

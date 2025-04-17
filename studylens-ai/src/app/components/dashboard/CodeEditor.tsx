@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Textarea } from '@/app/components/ui/textarea';
-import { Button } from '@/app/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/app/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Code, Play, Bug, Sparkles, RotateCcw, Terminal, Save, Copy } from 'lucide-react';
 
 interface CodeEditorProps {

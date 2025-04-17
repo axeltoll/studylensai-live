@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
 const Pricing = () => {

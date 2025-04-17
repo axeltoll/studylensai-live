@@ -1,17 +1,17 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/app/components/ui/card';
-import { Button } from '@/app/components/ui/button';
-import { Input } from '@/app/components/ui/input';
-import { Label } from '@/app/components/ui/label';
-import { Switch } from '@/app/components/ui/switch';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
-import { Badge } from '@/app/components/ui/badge';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Switch } from '@/components/ui/switch';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
 import { User, Bell, CreditCard, Key, Shield, LogOut } from 'lucide-react';
 import { useUser } from '@/app/context/UserContext';
 import { useUpgradePopup } from '@/app/dashboard/layout';
-import withAuth from '@/app/components/auth/withAuth';
+import withAuth from '@/components/auth/withAuth';
 
 function AccountSettings() {
   const { user, userTier, signOut } = useUser();

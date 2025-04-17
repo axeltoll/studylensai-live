@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Clock, Play, Pause, RotateCcw, Settings, Coffee, CheckCircle2, Plus, Minus, X } from 'lucide-react';
-import withAuth from '@/app/components/auth/withAuth';
-import { Card, CardContent, CardHeader, CardTitle } from '@/app/components/ui/card';
-import { Button } from '@/app/components/ui/button';
-import { Badge } from '@/app/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
+import withAuth from '@/components/auth/withAuth';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 // Define Pomodoro session types
 type SessionType = 'focus' | 'shortBreak' | 'longBreak';

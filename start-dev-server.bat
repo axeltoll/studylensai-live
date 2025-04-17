@@ -1,7 +1,7 @@
 @echo off
 SETLOCAL
 cd studylens-ai
-npm run dev
+npx next dev -p 3001
 ENDLOCAL
 
 pause 

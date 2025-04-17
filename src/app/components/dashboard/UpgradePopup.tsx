@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, CreditCard, Check, AlertCircle } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { useUser } from '@/app/context/UserContext';
 import { useAuth } from '@/lib/contexts/AuthContext';
 import { useRouter } from 'next/navigation';

@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import withAuth from '@/app/components/auth/withAuth';
-import FeatureShowcase from '@/app/components/dashboard/FeatureShowcase';
+import withAuth from '@/components/auth/withAuth';
+import FeatureShowcase from '@/components/dashboard/FeatureShowcase';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 

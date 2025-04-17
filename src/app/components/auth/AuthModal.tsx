@@ -5,7 +5,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '@/lib/firebase/firebase';
 import toast from 'react-hot-toast';
-import { Button } from '@/app/components/ui/button';
+import { Button } from '@/components/ui/button';
 import { FcGoogle } from 'react-icons/fc'; // Google Icon
 import { HiOutlineEye, HiOutlineEyeOff, HiOutlineMail, HiOutlineLockClosed, HiX } from 'react-icons/hi';
 import Image from 'next/image';

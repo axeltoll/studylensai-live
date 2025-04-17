@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import withAuth from '@/app/components/auth/withAuth';
+import withAuth from '@/components/auth/withAuth';
 import { useAuth } from '@/lib/contexts/AuthContext';
-import TrialPopup from '@/app/components/dashboard/TrialPopup';
+import TrialPopup from '@/components/dashboard/TrialPopup';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
