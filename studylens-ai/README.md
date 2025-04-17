@@ -1,4 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# StudyLens AI 
+
+A powerful AI-powered learning platform that helps students study more effectively.
+
+## Features
+
+- AI Study Assistant
+- Smart Note Taking
+- Homework Helper
+- Code Assistant
+- Essay Writer
+
+## Deployment
+
+This project is deployed on Vercel. 
+
+### Requirements
+- Node.js 20.x
+- Next.js 14+
+
+### Environment Variables
+See .env.example for the required environment variables.
 
 ## Getting Started
 
@@ -19,17 +40,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Features
-
-### AI Code Editor
-
-The StudyLens AI application includes a powerful code editor with AI-assisted features:
-
-- **Write & Edit**: Author code in 16+ programming languages with syntax highlighting
-- **Run & Test**: Execute code directly in the editor with real-time output
-- **Debug & Optimize**: AI-powered debugging and code optimization
-- **Model Selection**: Choose between different AI models (Claude 3.7, Gemini Pro 2.5, GPT-4o)
 
 ## Learn More
 
