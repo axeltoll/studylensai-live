@@ -9,11 +9,13 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react']
   },
-  // Ensure both @/app/components and @/components paths work
+  // Improve path aliasing configuration
   webpack: (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@/components': 'src/app/components'
+      '@/components': 'src/app/components',
+      '@/app': 'src/app',
+      '@/lib': 'src/lib'
     };
     return config;
   }

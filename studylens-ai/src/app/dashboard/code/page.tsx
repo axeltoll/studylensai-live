@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import withAuth from '../../../components/auth/withAuth';
-import CodeEditor from '../../../components/dashboard/CodeEditor';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../../components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../../components/ui/tabs';
+import withAuth from '@/app/components/auth/withAuth';
+import CodeEditor from '@/app/components/dashboard/CodeEditor';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/app/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/components/ui/tabs';
 import { Check, Code, FileCode, FileText, Lightbulb, MessageSquare } from 'lucide-react';
 
 function CodeEditorDashboard() {
