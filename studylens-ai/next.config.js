@@ -1,25 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
   images: {
     domains: ['storage.googleapis.com', 'lh3.googleusercontent.com'],
+    unoptimized: process.env.NODE_ENV === 'development',
   },
   reactStrictMode: false,
+  output: 'standalone',
   experimental: {
-    esmExternals: 'loose', // This helps with esm modules
+    optimizePackageImports: ['lucide-react']
   },
+  // Ensure both @/app/components and @/components paths work
   webpack: (config) => {
-    config.resolve.fallback = { ...config.resolve.fallback, fs: false };
-    
-    // Add rule for handling mjs files
-    config.module.rules.push({
-      test: /\.mjs$/,
-      include: /node_modules/,
-      type: 'javascript/auto',
-    });
-    
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@/components': 'src/app/components'
+    };
     return config;
-  },
+  }
 };
 
 module.exports = nextConfig;
