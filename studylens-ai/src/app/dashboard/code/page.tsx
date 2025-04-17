@@ -1,11 +1,10 @@
 'use client';
-
 import React, { useState, useEffect } from 'react';
+import { Check, Code, FileCode, FileText, Lightbulb, MessageSquare } from 'lucide-react';
 import withAuth from '@/components/auth/withAuth';
 import CodeEditor from '@/components/dashboard/CodeEditor';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Check, Code, FileCode, FileText, Lightbulb, MessageSquare } from 'lucide-react';
 
 function CodeEditorDashboard() {
   const [selectedAIModel, setSelectedAIModel] = useState<'gemini-pro-2.5' | 'claude-3.7' | 'gpt-4o'>('claude-3.7');
